@@ -21,7 +21,7 @@ from tempo_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # http://localhost:8000/landing/
     path('landing/', views.landing, name='landing'),
-
+    path('artist/', views.artist, name='artist'),
+    path('artist_api/', views.artist_api, name='artist_api'),
 ]
