@@ -13,7 +13,9 @@
     <video autoplay loop muted id="landingvideo">
         <source src="{% static 'backgrounds/tempo-speed.mp4' %}" type="video/mp4">
     </video>
-    <a href="/artist/"><h1>Tempo</h1></a>
+    <h1>Tempo</h1>
+    <button class="btn"><a href="{% url 'artist' %}">Browse</a></button>
+
 </body>
 
 </html>

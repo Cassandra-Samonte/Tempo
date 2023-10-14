@@ -21,3 +21,34 @@ h1 {
     min-height: 100%;
     z-index: -1; 
 }
+
+a {
+    font-family: "Stretch Pro";
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}
+
+a:hover {
+    color: #2b2d2f;
+}
+
+
+.btn {
+    border: 2px solid white; 
+    background-color: transparent; 
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    text-transform: uppercase;
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+    position: fixed;  
+    top: 70%;        
+    left: 50%;      
+    transform: translate(-50%, -50%);
+}
+
+.btn:hover {
+    background-color: white; 
+}
