@@ -1,3 +1,11 @@
+# https://www.youtube.com/watch?v=WAmEZBEeNmg&t=838s
+# Youtube tutorial was used to:
+#   1. Understand how to get access token using client id and client secret
+#   2. How to use the token to search for an artist
+#   3. How to use token and artist id to search for songs
+# The tutorial was basically used to understand how spotify api works
+#   and to get ideas on how to display information on our app
+
 from dotenv import load_dotenv
 import os
 # Base64 imported because the concatenated string of clientId and client secret
