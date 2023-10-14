@@ -1,0 +1,16 @@
+/* CSS File for artist detail */
+
+.topContent{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.card:first-of-type{
+    flex: auto 1;
+    display: inline-block;
+}
+img{
+    position: relative;
+    width:30%;
+    float: right;
+}
