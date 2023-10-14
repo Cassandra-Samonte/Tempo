@@ -1,6 +1,6 @@
 h1 {
     /* color: white; */
-    color: red;
+    color: white;
     font-size: 120px;
     position: fixed;  
     top: 50%;        
@@ -8,4 +8,31 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+body {
+    background-image: url('/static/css/backgrounds/home.jpeg');
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
+/* .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
