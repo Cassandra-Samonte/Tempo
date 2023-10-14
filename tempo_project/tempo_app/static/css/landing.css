@@ -2,17 +2,6 @@
     font-family: "Stretch Pro";
     src: url('/static/fonts/StretchPro.otf') format('opentype');
   }
-  
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-image: url('/static/css/backgrounds/home.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-}
 
 h1 {
     font-family: "Stretch Pro";
@@ -24,4 +13,11 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-
+#landingvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; 
+}
