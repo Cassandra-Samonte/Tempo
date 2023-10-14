@@ -22,7 +22,7 @@ from tempo_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('landing/', views.landing, name='landing'),
-    path('artist/', views.artist, name='artist'),
+    path('artist/<int:artist_id>/', views.artist, name='artist'),
     path('artist_api/', views.artist_api, name='artist_api'),
     path('seed_artists/',views.seed_artists, name='seed_artists')
 ]

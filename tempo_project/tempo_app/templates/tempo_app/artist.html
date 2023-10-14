@@ -3,15 +3,17 @@
 {% block content %}  
 
 <h1>{{artist}}</h1>
-
+<img src="{{image_url}}" alt="artist image">
 <div class="card">
+    <h3>Top tracks</h3>
     <div class="card-content">
-        <span class="card-title">{{artist}}</span>
-        
         {% for song in songs %}
-            <p>{{song}}</p>
+            <h5>{{song}}</h5>
         {% endfor %}
     </div>
+</div>
+<div class="card">
+    <h3>Merch</h3>
 </div>
 
 
