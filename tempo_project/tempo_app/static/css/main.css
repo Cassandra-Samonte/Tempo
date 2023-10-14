@@ -1,11 +1,34 @@
+@font-face {
+    font-family: "Stretch Pro";
+    src: url('/static/fonts/StretchPro.otf') format('opentype');
+  }
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
+h1 {
+    font-family: "Stretch Pro";
+    color: white;
+    font-size: 80px;
+}
+
+body {
+    background-image: url('/static/backgrounds/home.jpeg');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    
+  }
+
 .nav-wrapper,footer.page-footer{
-    background-color: rgb(132, 6, 171);
+    color: white;
 }
 
 
