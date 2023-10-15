@@ -21,6 +21,9 @@ from tempo_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # This is just so the app goes somewhere when it's first opened
+    # We can change or modify in any way
+    path('', views.home, name='home'),
     path('landing/', views.landing, name='landing'),
     path('artist/<int:artist_id>/', views.artist, name='artist'),
     path('artist_api/', views.artist_api, name='artist_api'),

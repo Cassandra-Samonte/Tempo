@@ -3,6 +3,9 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 
+
+def home(request):
+    return redirect('landing')
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
