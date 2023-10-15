@@ -125,4 +125,3 @@ def get_songs_by_artist(token, artist_id):
 # # printing each song name
 # for idx, song in enumerate(songs):
 #     print(f"{idx+1}. {song['name']}")
-
