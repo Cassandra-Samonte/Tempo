@@ -6,6 +6,13 @@
 # The tutorial was basically used to understand how spotify api works
 #   and to get ideas on how to display information on our app
 
+# pip install  python-dotenv
+# pip install requests
+# pip install python-env
+# pip install dotenv
+# You need a .env file
+#       file has CLIENT_ID=""
+#           AND  CLIENT_SECRET=""
 from dotenv import load_dotenv
 import os
 # Base64 imported because the concatenated string of clientId and client secret
