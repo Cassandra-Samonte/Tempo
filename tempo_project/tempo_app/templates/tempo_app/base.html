@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block csslinks %}{% endblock %}
 </head>
 <body>
     <header>
@@ -18,16 +19,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/landing/">Home</a>
+                  <a class="nav-link" href="{% url 'landing' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/artist/">Browse</a>
+                  <a class="nav-link" href="{% url 'artist' 1 %}">Browse</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/artist/">Artists</a>
+                  <a class="nav-link" href="{% url 'artist' 2 %}">Artists</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/artist/">Merch</a>
+                  <a class="nav-link" href="{% url 'artist' 3 %}">Merch</a>
                 </li>
               </ul>
             </div>

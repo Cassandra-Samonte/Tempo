@@ -1,13 +1,31 @@
 {% extends 'tempo_app/base.html' %}
+{% load static %}
 
+<!-- Block for page specific css links -->
+{% block csslinks%}
+<link rel="stylesheet" href="{% static 'css/artist.css' %}">
+{% endblock %}
+
+<!-- Block for page content -->
 {% block content %}  
 
-<h1>Artists</h1>
 
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">{{artist.name }}</span>
+<h1>{{artist}}</h1>
+
+<div class="topContent">
+    <div class="card">
+        <h3>Top tracks</h3>
+        <div class="card-content">
+            {% for song in songs %}
+                <h5>{{song}}</h5>
+            {% endfor %}
+        </div>
     </div>
+    <img src="{{image_url}}" alt="artist image">
+</div>
+
+<div class="card merch">
+    <h3>Merch</h3>
 </div>
 
 
