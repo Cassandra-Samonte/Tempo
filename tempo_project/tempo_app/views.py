@@ -16,6 +16,9 @@ def player(request):
 def merch(request):
     return render(request, 'tempo_app/merch.html')
 
+def login(request):
+    return render(request, 'tempo_app/login.html')
+
 def artist(request, artist_id):
     # Get artist object matching name
     # artist = Artist.objects.get(name='Drake')
