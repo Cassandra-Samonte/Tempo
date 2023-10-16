@@ -10,6 +10,12 @@ def home(request):
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
+def player(request):
+    return render(request, 'tempo_app/player.html')
+
+def merch(request):
+    return render(request, 'tempo_app/merch.html')
+
 def artist(request, artist_id):
     # Get artist object matching name
     # artist = Artist.objects.get(name='Drake')
