@@ -41,6 +41,48 @@ def login(request):
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
 
 def callback(request):
+    code = request.GET['code']
+    state = request.GET['state']
+
+    # First concatenate client id and client secret(important to have ":")
+    auth_string = client_id + ":" + client_secret
+
+    # Encode the concatenated string
+    auth_bytes = auth_string.encode("utf-8")
+
+    # Encode using base 64
+    #   base64... returns a base64 object and then it's converted into a string
+    auth_base64 = str(base64.b64encode(auth_bytes),"utf-8")
+
+    if state==None:
+        return redirect('login'+urllib.parse.urlencode({'error':'state_mismatch'}))
+    else:
+        # authOptions={
+        #     'url':'https://accounts.spotify.com/api/token',
+        #     'form': {
+        #         'code':code,
+        #         'redirect_uri':redirect_uri,
+        #         'grant_type':'authorization_code',
+        #     },
+        #     'headers':{
+        #         'Authorization':'Basic' + auth_base64
+        #     },
+        #     json:True
+        # }
+        url='https://accounts.spotify.com/api/token'
+        form = {
+                'code':code,
+                'redirect_uri':redirect_uri,
+                'grant_type':'authorization_code',
+            }
+        headers = {
+            "Authorization":"Basic "+ auth_base64,
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+        result = post(url, headers=headers, data=form)
+        json_result = json.loads(result.content)
+        print(json_result)
+        
     return redirect('landing')
 
 def artist(request, artist_id):
