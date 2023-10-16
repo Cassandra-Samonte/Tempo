@@ -1,0 +1,59 @@
+/* CSS File for artist detail */
+h1{
+    width: 80%;
+    margin: 0 auto 20px;
+}
+.topContent{
+    position: relative;
+    width: 80%;
+    gap: 0;
+    margin: 0 auto 20px;
+}
+
+img{
+    position: relative;
+    width:100%;
+    display: block;
+    margin: 0 auto;
+}
+.merch{
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width:350px) and (max-width:768px){
+    .topContent{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    img{
+        grid-row:1;
+    }
+}
+@media only screen and (min-width:768px){
+    h1{
+        width: 100%;
+        max-width: 1000px;
+        margin-bottom: 40px;
+    }
+    .topContent{
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+        max-height: 450px;
+        margin-bottom: 40px;
+    }
+    .card:first-of-type{
+        flex: auto 1;
+        display: inline-block;
+    }
+    img{
+        right:0;
+        width: 60%;
+        max-width: 380px;
+    }
+    .merch{
+        width: 100%;
+        max-width: 1000px;
+    }
+}
