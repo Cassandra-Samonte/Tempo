@@ -84,5 +84,4 @@ def artist_api(request):
             "image_url": image_url,
             "spotify_id": spotify_id
         })
-    
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
