@@ -13,6 +13,8 @@ import random
 import urllib.request
 import urllib.parse
 
+redirect_uri = 'http://localhost:8000/callback'
+
 def home(request):
     return redirect('login')
 def landing(request):
@@ -29,7 +31,6 @@ def login(request):
     state = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=N))
     scope = 'user-read-private user-read-email';
-    redirect_uri = 'http://localhost:8000/callback'
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
         'client_id': client_id,
