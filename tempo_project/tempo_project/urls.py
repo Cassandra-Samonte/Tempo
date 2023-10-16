@@ -25,6 +25,7 @@ urlpatterns = [
     # We can change or modify in any way
     path('', views.home, name='home'),
     path('landing/', views.landing, name='landing'),
+    # changed int to str to match Spotify data type 
     path('artist/<str:artist_id>/', views.artist, name='artist'),
     path('artist_api/', views.artist_api, name='artist_api'),
     path('seed_artists/',views.seed_artists, name='seed_artists')
