@@ -31,4 +31,5 @@ urlpatterns = [
     path('seed_artists/',views.seed_artists, name='seed_artists'),
     path('player/', views.player, name='player'),
     path('merch/', views.merch, name='merch'),
+    path('login/', views.login, name='login'),
 ]
