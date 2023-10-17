@@ -117,4 +117,4 @@ def artist_api(request):
 # Merch
 def merch(request):
     merchs = Merch.objects.all()
-    return render(request, 'merch.html', {'merchs': merchs})
+    return render(request, 'tempo_app/merch.html', {'merchs': merchs})
