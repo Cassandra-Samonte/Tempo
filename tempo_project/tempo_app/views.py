@@ -34,6 +34,9 @@ def merch(request):
     return render(request, 'tempo_app/merch.html')
 
 # Login(basically just authorizing spotify)
+# https://developer.spotify.com/documentation/web-api/tutorials/code-flow
+# the documentation is in JS and uses express
+# converting the code was a major challenge
 def login(request):
     # var to specify how many characters the random string should be
     N = 16
@@ -41,7 +44,7 @@ def login(request):
     # This provides protection against attacks such as cross-site request forgery
     state = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=N))
-    # Scope are the permissions we want the user to authorize
+    # Scope are the permissions we want the user to authorize(can add more)
     # https://developer.spotify.com/documentation/web-api/concepts/scopes
     scope = 'user-read-private user-read-email user-top-read';
     # convert an object to url query form and save it
@@ -56,6 +59,7 @@ def login(request):
     # once authorized(or cancelled), redirects to redirect uri(stored here, but also saved on spotify app dashboard)
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
 
+# https://developer.spotify.com/documentation/web-api/tutorials/code-flow
 def callback(request):
     code = request.GET['code']
     state = request.GET['state']
