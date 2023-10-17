@@ -113,3 +113,8 @@ def artist_api(request):
             "spotify_id": spotify_id
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
+
+# Merch
+def merch(request):
+    merchs = Merch.objects.all()
+    return render(request, 'merch.html', {'merchs': merchs})

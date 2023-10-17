@@ -9,6 +9,17 @@
 <!-- Block for page content -->
 {% block content %}  
 
-    <p>Merch</p>
+<h1>Merch</h1>
+
+{% for merch in merchs %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ merch.item }}</span>
+      <p>Price: {{ merch.price }}</p>
+      <p>Description: {{ merch.description|linebreaks }}</p>
+      <!-- <img src="{{ merch.image }}" alt="{{ merch.item }}" width="200" height="200"> -->
+    </div>
+  </div>
+{% endfor %}
 
 {% endblock %}
