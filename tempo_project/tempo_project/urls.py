@@ -32,4 +32,6 @@ urlpatterns = [
     path('player/', views.player, name='player'),
     path('merch/', views.merch, name='merch'),
     path('login/', views.login, name='login'),
+    path('callback/', views.callback, name='callback'),
+    # path('refresh_token/', views.refresh_token, name='refresh_token'),
 ]

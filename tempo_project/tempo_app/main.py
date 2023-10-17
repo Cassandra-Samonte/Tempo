@@ -115,6 +115,17 @@ def get_songs_by_artist(token, artist_id):
     json_result = json.loads(result.content)["tracks"]
     return json_result
 
+def get_user_top_items(token):
+    # url = "https://api.spotify.com/v1/me/"
+    url = 'https://api.spotify.com/v1/me/top/artists'
+    headers = get_auth_header(token)
+
+    result = get(url, headers=headers)
+    print(result)
+    json_result = json.loads(result.content)
+    print(json_result)
+    return json_result
+
 # # This token will be used in future headers when requests to the api are sent
 # #   requests such as trying to get artist info or album info
 # token = get_token()
