@@ -14,36 +14,107 @@ import random
 import urllib.request
 import urllib.parse
 
-redirect_uri = 'http://localhost:8000/callback'
+class StoredInfo:
+    redirect_uri='http://localhost:8000/callback'
+    access_token = ''
+    refresh_token = ''
 
 def home(request):
     return redirect('login')
+
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
 def player(request):
+    print(StoredInfo.access_token)
+    user_top_items = get_user_top_items(StoredInfo.access_token)
+    # print(user_top_items)
     return render(request, 'tempo_app/player.html')
 
 def merch(request):
     return render(request, 'tempo_app/merch.html')
 
+# Login(basically just authorizing spotify)
+# https://developer.spotify.com/documentation/web-api/tutorials/code-flow
+# the documentation is in JS and uses express
+# converting the code was a major challenge
 def login(request):
+    # var to specify how many characters the random string should be
     N = 16
+    # state is a optional param which provides added security
+    # This provides protection against attacks such as cross-site request forgery
     state = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=N))
-    scope = 'user-read-private user-read-email';
+    # Scope are the permissions we want the user to authorize(can add more)
+    # https://developer.spotify.com/documentation/web-api/concepts/scopes
+    scope = 'user-read-private user-read-email user-top-read user-modify-playback-state user-read-playback-state';
+    # convert an object to url query form and save it
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
         'client_id': client_id,
         'scope':scope,
-        'redirect_uri':redirect_uri,
+        'redirect_uri':StoredInfo.redirect_uri,
         'state':state,
     })
+    # redirect to the page that asks the user to authorize
+    # once authorized(or cancelled), redirects to redirect uri(stored here, but also saved on spotify app dashboard)
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
 
+# https://developer.spotify.com/documentation/web-api/tutorials/code-flow
 def callback(request):
+    code = request.GET['code']
+    state = request.GET['state']
+
+    # First concatenate client id and client secret(important to have ":")
+    auth_string = client_id + ":" + client_secret
+
+    # Encode the concatenated string
+    auth_bytes = auth_string.encode("utf-8")
+
+    # Encode using base 64
+    #   base64... returns a base64 object and then it's converted into a string
+    auth_base64 = str(base64.b64encode(auth_bytes),"utf-8")
+
+    if state==None:
+        return redirect('login'+urllib.parse.urlencode({'error':'state_mismatch'}))
+    else:
+        url='https://accounts.spotify.com/api/token'
+        form = {
+            'code':code,
+            'redirect_uri':StoredInfo.redirect_uri,
+            'grant_type':'authorization_code',
+            }
+        headers = {
+            "Authorization":"Basic "+ auth_base64,
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+        result = post(url, headers=headers, data=form)
+        json_result = json.loads(result.content)
+        StoredInfo.access_token = json_result['access_token']
+        StoredInfo.refresh_token = json_result['refresh_token']
     return redirect('landing')
 
+# def refresh_token(request):
+#     auth_string = client_id + ":" + client_secret
+#     auth_bytes = auth_string.encode("utf-8")
+#     auth_base64 = str(base64.b64encode(auth_bytes),"utf-8")
+#     url = 'https://accounts.spotify.com/api/token'
+#     form = {
+#         'grant_type': 'refresh_token',
+#         'refresh_token': StoredInfo.refresh_token,
+#     }
+#     headers = {
+#             "Authorization":"Basic "+ auth_base64,
+#             "Content-Type": "application/x-www-form-urlencoded"
+#         }
+#     result = post(url, form, headers)
+#     json_result = json.loads(result.content)
+#     print('Refresh Token Result:')
+#     print(json_result)
+#     print()
+#     return redirect('player')
+
+# Artist detail
 def artist(request, artist_id):
     # Get artist object matching name
     # artist = Artist.objects.get(name='Drake')
@@ -78,12 +149,11 @@ def artist(request, artist_id):
 # def artist_api(request):
 #     return render(request, 'tempo_app/artist_api.html')
 
+# Seed Artists(localhost:PORT/seed_artists/)
 def seed_artists(request):
     for artist in Artists:
         c = Artist(name=artist['name'])
         c.save()
-        
-
     return redirect('landing')
 
 # Artist Index
