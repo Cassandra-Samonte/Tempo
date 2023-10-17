@@ -18,11 +18,9 @@ class StoredInfo:
     access_token = ''
     refresh_token = ''
 
-# redirect_uri = 'http://localhost:8000/callback'
-# Access token received from token request using auth info()
-# access_token=''
 def home(request):
     return redirect('login')
+
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
@@ -35,11 +33,18 @@ def player(request):
 def merch(request):
     return render(request, 'tempo_app/merch.html')
 
+# Login(basically just authorizing spotify)
 def login(request):
+    # var to specify how many characters the random string should be
     N = 16
+    # state is a optional param which provides added security
+    # This provides protection against attacks such as cross-site request forgery
     state = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=N))
+    # Scope are the permissions we want the user to authorize
+    # https://developer.spotify.com/documentation/web-api/concepts/scopes
     scope = 'user-read-private user-read-email user-top-read';
+    # convert an object to url query form and save it
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
         'client_id': client_id,
@@ -47,6 +52,8 @@ def login(request):
         'redirect_uri':StoredInfo.redirect_uri,
         'state':state,
     })
+    # redirect to the page that asks the user to authorize
+    # once authorized(or cancelled), redirects to redirect uri(stored here, but also saved on spotify app dashboard)
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
 
 def callback(request):
@@ -78,14 +85,8 @@ def callback(request):
         }
         result = post(url, headers=headers, data=form)
         json_result = json.loads(result.content)
-        print("Access token: ")
-        print(json_result['access_token'])
         StoredInfo.access_token = json_result['access_token']
         StoredInfo.refresh_token = json_result['refresh_token']
-        print('Refresh Token')
-        print(StoredInfo.refresh_token)
-        print(json_result)
-
     return redirect('landing')
 
 # def refresh_token(request):
@@ -108,6 +109,7 @@ def callback(request):
 #     print()
 #     return redirect('player')
 
+# Artist detail
 def artist(request, artist_id):
     # Get artist object matching name
     # artist = Artist.objects.get(name='Drake')
@@ -142,12 +144,11 @@ def artist(request, artist_id):
 # def artist_api(request):
 #     return render(request, 'tempo_app/artist_api.html')
 
+# Seed Artists(localhost:PORT/seed_artists/)
 def seed_artists(request):
     for artist in Artists:
         c = Artist(name=artist['name'])
         c.save()
-        
-
     return redirect('landing')
 
 # Artist Index
