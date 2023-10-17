@@ -3,6 +3,7 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
+from .models import Merch
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
 # imported these for login, used to create a random 16 character string
@@ -182,3 +183,8 @@ def artist_api(request):
             "spotify_id": spotify_id
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
+
+# Merch
+def merch(request):
+    merchs = Merch.objects.all()
+    return render(request, 'merch.html', {'merchs': merchs})
