@@ -25,6 +25,9 @@ def home(request):
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
+def merchDetails(request):
+    return render(request, 'tempo_app/merchDetails.html')
+
 def player(request):
     print(StoredInfo.access_token)
     user_top_items = get_user_top_items(StoredInfo.access_token)
@@ -187,4 +190,4 @@ def artist_api(request):
 # Merch
 def merch(request):
     merchs = Merch.objects.all()
-    return render(request, 'merch.html', {'merchs': merchs})
+    return render(request, 'tempo_app/merch.html', {'merchs': merchs})
