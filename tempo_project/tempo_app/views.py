@@ -13,14 +13,23 @@ import random
 import urllib.request
 import urllib.parse
 
-redirect_uri = 'http://localhost:8000/callback'
+class StoredInfo:
+    redirect_uri='http://localhost:8000/callback'
+    access_token = ''
+    refresh_token = ''
 
+# redirect_uri = 'http://localhost:8000/callback'
+# Access token received from token request using auth info()
+# access_token=''
 def home(request):
     return redirect('login')
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
 def player(request):
+    print(StoredInfo.access_token)
+    user_top_items = get_user_top_items(StoredInfo.access_token)
+    # print(user_top_items)
     return render(request, 'tempo_app/player.html')
 
 def merch(request):
@@ -30,12 +39,12 @@ def login(request):
     N = 16
     state = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=N))
-    scope = 'user-read-private user-read-email';
+    scope = 'user-read-private user-read-email user-top-read';
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
         'client_id': client_id,
         'scope':scope,
-        'redirect_uri':redirect_uri,
+        'redirect_uri':StoredInfo.redirect_uri,
         'state':state,
     })
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
@@ -57,23 +66,11 @@ def callback(request):
     if state==None:
         return redirect('login'+urllib.parse.urlencode({'error':'state_mismatch'}))
     else:
-        # authOptions={
-        #     'url':'https://accounts.spotify.com/api/token',
-        #     'form': {
-        #         'code':code,
-        #         'redirect_uri':redirect_uri,
-        #         'grant_type':'authorization_code',
-        #     },
-        #     'headers':{
-        #         'Authorization':'Basic' + auth_base64
-        #     },
-        #     json:True
-        # }
         url='https://accounts.spotify.com/api/token'
         form = {
-                'code':code,
-                'redirect_uri':redirect_uri,
-                'grant_type':'authorization_code',
+            'code':code,
+            'redirect_uri':StoredInfo.redirect_uri,
+            'grant_type':'authorization_code',
             }
         headers = {
             "Authorization":"Basic "+ auth_base64,
@@ -81,9 +78,35 @@ def callback(request):
         }
         result = post(url, headers=headers, data=form)
         json_result = json.loads(result.content)
+        print("Access token: ")
+        print(json_result['access_token'])
+        StoredInfo.access_token = json_result['access_token']
+        StoredInfo.refresh_token = json_result['refresh_token']
+        print('Refresh Token')
+        print(StoredInfo.refresh_token)
         print(json_result)
-        
+
     return redirect('landing')
+
+# def refresh_token(request):
+#     auth_string = client_id + ":" + client_secret
+#     auth_bytes = auth_string.encode("utf-8")
+#     auth_base64 = str(base64.b64encode(auth_bytes),"utf-8")
+#     url = 'https://accounts.spotify.com/api/token'
+#     form = {
+#         'grant_type': 'refresh_token',
+#         'refresh_token': StoredInfo.refresh_token,
+#     }
+#     headers = {
+#             "Authorization":"Basic "+ auth_base64,
+#             "Content-Type": "application/x-www-form-urlencoded"
+#         }
+#     result = post(url, form, headers)
+#     json_result = json.loads(result.content)
+#     print('Refresh Token Result:')
+#     print(json_result)
+#     print()
+#     return redirect('player')
 
 def artist(request, artist_id):
     # Get artist object matching name
