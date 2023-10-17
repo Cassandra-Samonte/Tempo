@@ -4,9 +4,19 @@ from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
 
+# https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
+# imported these for login, used to create a random 16 character string
+import string
+import random
+# https://docs.python.org/3/library/urllib.request.html#urllib-examples
+# to convert an object into a query string
+import urllib.request
+import urllib.parse
+
+redirect_uri = 'http://localhost:8000/callback'
 
 def home(request):
-    return redirect('landing')
+    return redirect('login')
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
@@ -17,7 +27,21 @@ def merch(request):
     return render(request, 'tempo_app/merch.html')
 
 def login(request):
-    return render(request, 'tempo_app/login.html')
+    N = 16
+    state = ''.join(random.choices(string.ascii_uppercase +
+                             string.digits, k=N))
+    scope = 'user-read-private user-read-email';
+    query_string = urllib.parse.urlencode({
+        'response_type': 'code',
+        'client_id': client_id,
+        'scope':scope,
+        'redirect_uri':redirect_uri,
+        'state':state,
+    })
+    return redirect('https://accounts.spotify.com/authorize?'+query_string)
+
+def callback(request):
+    return redirect('landing')
 
 def artist(request, artist_id):
     # Get artist object matching name
