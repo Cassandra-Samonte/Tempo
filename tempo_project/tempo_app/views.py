@@ -3,6 +3,7 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
+from .models import Merch
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
 # imported these for login, used to create a random 16 character string

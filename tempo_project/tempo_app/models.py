@@ -14,6 +14,3 @@ class Merch(models.Model):
     description = models.TextField(max_length=500)
     price = models.IntegerField()
     image = models.URLField(max_length=250)
-
-
-
