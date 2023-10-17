@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
 </head>
 <body>
     <p>Player</p>
+    
+    <button id="togglePlay">Toggle Play</button>
+    <script>
+        window.onSpotifyWebPlaybackSDKReady = () => {
+            const token = '{{access_token}}';
+            const player = new Spotify.Player({
+            name: 'Tempo Player',
+            getOAuthToken: cb => { cb(token); },
+            volume: 0.2
+            });
+            player.connect().then(success => {
+                if (success) {
+                    console.log('The Web Playback SDK successfully connected to Spotify!');
+                }
+            })
+            document.getElementById('togglePlay').onclick = function() {
+                player.togglePlay();
+            }
+        };
+    </script>
 </body>
 </html>

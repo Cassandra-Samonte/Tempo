@@ -19,20 +19,35 @@ class StoredInfo:
     access_token = ''
     refresh_token = ''
 
+
+
 def home(request):
     return redirect('login')
+
+
 
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
+
+
 def player(request):
-    print(StoredInfo.access_token)
-    user_top_items = get_user_top_items(StoredInfo.access_token)
+    # print(StoredInfo.access_token)
+    # user_top_items = get_user_top_items(StoredInfo.access_token)
     # print(user_top_items)
-    return render(request, 'tempo_app/player.html')
+    track_uri= 'spotify:artist:5p9HO3XC5P3BLxJs5Mtrhm'
+    # result = play_song(StoredInfo.access_token, track_uri)
+    # print(result)
+    return render(request, 'tempo_app/player.html',{
+        'access_token':StoredInfo.access_token,
+    })
+
+
 
 def merch(request):
     return render(request, 'tempo_app/merch.html')
+
+
 
 # Login(basically just authorizing spotify)
 # https://developer.spotify.com/documentation/web-api/tutorials/code-flow
@@ -47,7 +62,7 @@ def login(request):
                              string.digits, k=N))
     # Scope are the permissions we want the user to authorize(can add more)
     # https://developer.spotify.com/documentation/web-api/concepts/scopes
-    scope = 'user-read-private user-read-email user-top-read user-modify-playback-state user-read-playback-state';
+    scope = 'user-read-private user-read-email user-top-read user-read-playback-state user-modify-playback-state user-read-currently-playing app-remote-control streaming user-read-playback-position';
     # convert an object to url query form and save it
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
@@ -187,4 +202,4 @@ def artist_api(request):
 # Merch
 def merch(request):
     merchs = Merch.objects.all()
-    return render(request, 'merch.html', {'merchs': merchs})
+    return render(request, 'tempo_app/merch.html', {'merchs': merchs})

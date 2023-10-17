@@ -18,7 +18,7 @@ import os
 # Base64 imported because the concatenated string of clientId and client secret
 #   needs to be encoded with base 64, then it can be sent to receive a token
 import base64
-from requests import post, get
+from requests import post, get, put
 import json
 
 # Will only load if there is a .env file created
@@ -113,6 +113,9 @@ def get_songs_by_artist(token, artist_id):
 
     result = get(url, headers=headers)
     json_result = json.loads(result.content)["tracks"]
+    # print(json_result)
+    print(json_result[0])
+    print(json_result[0]['uri'])
     return json_result
 
 def get_user_top_items(token):
@@ -123,8 +126,21 @@ def get_user_top_items(token):
     result = get(url, headers=headers)
     print(result)
     json_result = json.loads(result.content)
-    print(json_result)
+    # print(json_result)
     return json_result
+
+def play_song(token, track_uri):
+    data = {
+        "context_uri": track_uri
+    }
+    url = "https://api.spotify.com/v1/me/player/play"
+    headers = get_auth_header(token)
+    result = put(url=url,headers=headers,data=data)
+
+    print(result)
+    return result
+
+
 
 # # This token will be used in future headers when requests to the api are sent
 # #   requests such as trying to get artist info or album info
