@@ -46,7 +46,7 @@ def login(request):
                              string.digits, k=N))
     # Scope are the permissions we want the user to authorize(can add more)
     # https://developer.spotify.com/documentation/web-api/concepts/scopes
-    scope = 'user-read-private user-read-email user-top-read';
+    scope = 'user-read-private user-read-email user-top-read user-modify-playback-state user-read-playback-state';
     # convert an object to url query form and save it
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
