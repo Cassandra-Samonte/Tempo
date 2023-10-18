@@ -78,7 +78,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tempo',
-        'PORT': '5433',
     }
 }
 
