@@ -37,6 +37,7 @@ urlpatterns = [
     path('merch/create/', views.MerchCreate.as_view(), name='merch_create'),
     path('merch/<int:pk>/update/', views.MerchUpdate.as_view(), name='merch_update'),
     path('merch/<int:pk>/delete/', views.MerchDelete.as_view(), name='merch_delete'),
+    path('artist_search/', views.artist_search, name='artist_search'),
 
     # path('refresh_token/', views.refresh_token, name='refresh_token'),
 ]

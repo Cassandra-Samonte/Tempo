@@ -100,31 +100,27 @@ def seed_artists(request):
         c.save()
     return redirect('landing')
 
-# Artist Index
+
 def artist_api(request):
-    # Get list of all lists from database
     artists = Artist.objects.all()
-
-    # Initialize an empty list to store data
     artist_data = []
-
-    #  Get artist info from Spotify 
+    token = get_token()
     for artist in artists:
-        token = get_token()
         result = search_for_artist(token, artist.name)
-
-        # Get artist name, image, and ID 
         if result:
             artist_name = result["name"]
             image_url = result["images"][0]["url"]
             spotify_id = result["id"]
+            existing_artist, created = Artist.objects.get_or_create(name=artist_name)
+            existing_artist.spotify_id = spotify_id
+            existing_artist.image_url = image_url
+            existing_artist.save()
+            artist_data.append({
+                "name": artist_name,
+                "image_url": image_url,
+                "spotify_id": spotify_id
+            })
 
-        # Append artist data to the list 
-        artist_data.append({
-            "name": artist_name,
-            "image_url": image_url,
-            "spotify_id": spotify_id
-        })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
 
 
@@ -188,22 +184,31 @@ def callback(request):
         StoredInfo.refresh_token = json_result['refresh_token']
     return redirect('landing')
 
-# def refresh_token(request):
-#     auth_string = client_id + ":" + client_secret
-#     auth_bytes = auth_string.encode("utf-8")
-#     auth_base64 = str(base64.b64encode(auth_bytes),"utf-8")
-#     url = 'https://accounts.spotify.com/api/token'
-#     form = {
-#         'grant_type': 'refresh_token',
-#         'refresh_token': StoredInfo.refresh_token,
-#     }
-#     headers = {
-#             "Authorization":"Basic "+ auth_base64,
-#             "Content-Type": "application/x-www-form-urlencoded"
-#         }
-#     result = post(url, form, headers)
-#     json_result = json.loads(result.content)
-#     print('Refresh Token Result:')
-#     print(json_result)
-#     print()
-#     return redirect('player')
+
+def artist_search(request):
+    artist_name = None
+    songs = []
+    image_url = None
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        if query:
+            token = get_token()  
+            result = search_for_artist(token, query)  
+
+            if result:
+                artist_name = result["name"]
+                image_url = result["images"][0]["url"]
+                spotify_id = result["id"]
+                songs = get_songs_by_artist(token, spotify_id)
+                artist, created = Artist.objects.get_or_create(name=artist_name)
+                artist.spotify_id = spotify_id
+                artist.image_url = image_url
+                artist.save()
+    if artist_name is None:
+        return render(request, 'tempo_app/artist_search.html')  
+
+    return render(request, 'tempo_app/artist.html', {
+        'artist': artist_name,
+        'songs': songs,
+        'image_url': image_url,
+    })

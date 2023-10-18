@@ -54,30 +54,16 @@ def get_songs_by_artist(token, artist_id):
     result = requests.get(url, headers=headers)
     json_result = json.loads(result.content)["tracks"]
     return json_result
-    
-    
+
 token = get_token()
 result = search_for_artist(token, "ACDC")  
 print(result["name"])
 artist_id = result["id"]
 songs = get_songs_by_artist(token, artist_id)
 print(songs)
-
-# Create or retrieve an artist
 artist, created = Artist.objects.get_or_create(name="ACDC")
-
-# Modify the artist or perform any necessary operations
-
-# Save the artist to the database
 artist.save()
-
-# Create songs and associate them with the artist
 Song.objects.create(artist=artist, name="Song 1")
 Song.objects.create(artist=artist, name="Song 2")
-# Add more songs as needed
-
-# Songs are saved automatically when you create them
-
-# Print song information (optional)
 for idx, song in enumerate(songs):
     print(f"{idx + 1}. {song['name']}")
