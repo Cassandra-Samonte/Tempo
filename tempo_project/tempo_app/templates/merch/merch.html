@@ -11,7 +11,7 @@
 
 <h1>Merch</h1>
 
-{% if merchs%}
+{% if merchs %}
   {% for merch in merchs %}
     <a href="{% url 'merch_details' merch.id %}">
       <div class="card">
