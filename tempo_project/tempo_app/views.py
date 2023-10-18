@@ -3,6 +3,7 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
+from django.views.generic.edit import CreateView
 from .models import Merch
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
@@ -18,6 +19,10 @@ class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
+
+class MerchCreate(CreateView):
+    models = Merch
+    fields = '__all__'
 
 def home(request):
     return redirect('login')
