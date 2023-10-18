@@ -14,7 +14,7 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{ merch.item }}</span>
-        <p>Price: ${{ merch.price }}</p>
+        <p>${{ merch.price }}</p>
         <p>Description: {{ merch.description|linebreaks }}</p>
         <img src="{{ merch.image }}" alt="{{ merch.item }}">
     </div>
