@@ -16,5 +16,8 @@ class Merch(models.Model):
     price = models.IntegerField()
     image = models.URLField(max_length=250)
 
+    # Create an artist_id FK
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    
     def get_absolute_url(self):
         return reverse('detail', kwargs={'merch_id': self.id})

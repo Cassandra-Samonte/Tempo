@@ -11,17 +11,21 @@
 
 <h1>Merch</h1>
 
-{% for merch in merchs %}
-  <a href="{% url 'merch_details' merch.id %}">
-    <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ merch.item }}</span>
-      <p>${{ merch.price }}</p>
-      <img src="{{ merch.image }}" alt="{{ merch.item }}">
+{% if merchs%}
+  {% for merch in merchs %}
+    <a href="{% url 'merch_details' merch.id %}">
+      <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ merch.item }}</span>
+        <p>${{ merch.price }}</p>
+        <img src="{{ merch.image }}" alt="{{ merch.item }}">
+      </div>
     </div>
-  </div>
-</a>
-{% endfor %}
+  </a>
+  {% endfor %}
+{% else %}
+  <h1>No Merch</h1>
+{% endif %}
 
 <a href="{% url 'merch_create' %}">Add Merch</a>
 

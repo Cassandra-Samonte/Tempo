@@ -57,6 +57,10 @@ def player(request, track_id):
 
 def merch(request):
     merchs = Merch.objects.all()
+    if(merchs!=None):
+        print(merchs)
+    else:
+        print("no merchs")
     return render(request, 'merch/merch.html', {'merchs': merchs})
 
 def merch_detail(request, merch_id):
