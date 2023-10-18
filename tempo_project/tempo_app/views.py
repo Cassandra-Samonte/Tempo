@@ -21,7 +21,7 @@ class StoredInfo:
     refresh_token = ''
 
 class MerchCreate(CreateView):
-    models = Merch
+    model = Merch
     fields = '__all__'
     success_url = '/merch/{merch_id}'
 
@@ -41,8 +41,8 @@ def home(request):
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
-def merchDetails(request):
-    return render(request, 'tempo_app/merchDetails.html')
+# def merchDetails(request):
+#     return render(request, 'tempo_app/merchDetails.html')
 
 def player(request):
     print(StoredInfo.access_token)
