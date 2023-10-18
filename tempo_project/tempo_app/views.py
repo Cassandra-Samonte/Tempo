@@ -51,8 +51,12 @@ def player(request):
     return render(request, 'tempo_app/player.html')
 
 def merch(request):
-    return render(request, 'tempo_app/merch.html')
+    merchs = Merch.objects.all()
+    return render(request, 'merch/merch.html', {'merchs': merchs})
 
+def merch_detail(request, merch_id):
+    merch = Merch.objects.get( id=merch_id )
+    return render(request, 'merch/merch_detail.html', { 'merch': merch })
 
 # Artist detail
 def artist(request, artist_name):
@@ -120,10 +124,6 @@ def artist_api(request):
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
 
-# Merch
-def merch(request):
-    merchs = Merch.objects.all()
-    return render(request, 'tempo_app/merch.html', {'merchs': merchs})
 
 
 
@@ -276,8 +276,3 @@ def artist_api(request):
             "spotify_id": spotify_id
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
-
-# Merch
-def merch(request):
-    merchs = Merch.objects.all()
-    return render(request, 'merch.html', {'merchs': merchs})
