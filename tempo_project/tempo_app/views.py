@@ -187,7 +187,12 @@ def artist_api(request):
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
 
-# Merch
+# Merch Index
 def merch(request):
     merchs = Merch.objects.all()
     return render(request, 'merch/merch.html', {'merchs': merchs})
+
+# Merch Details
+def merch_detail(request, merch_id):
+    merch = Merch.objects.get( id=merch_id )
+    return render(request, 'merch/merch_detail.html', { 'merch': merch })

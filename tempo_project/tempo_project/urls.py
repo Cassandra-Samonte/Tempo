@@ -33,6 +33,6 @@ urlpatterns = [
     path('merch/', views.merch, name='merch'),
     path('login/', views.login, name='login'),
     path('callback/', views.callback, name='callback'),
-    path('merchDetails', views.merchDetails, name='merchDetails'),
+    path('merch/<int:merch_id>/', views.merch_detail, name='merch_details'),
     # path('refresh_token/', views.refresh_token, name='refresh_token'),
 ]
