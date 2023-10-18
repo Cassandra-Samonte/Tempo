@@ -24,7 +24,7 @@ class StoredInfo:
 class MerchCreate(CreateView):
     model = Merch
     fields = '__all__'
-    success_url = '/merch/{merch_id}'
+    # success_url = '/merch/{merch_id}'
 
 class MerchUpdate(UpdateView):
   model = Merch

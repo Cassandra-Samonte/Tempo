@@ -20,4 +20,4 @@ class Merch(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'merch_id': self.id})
+        return reverse('merch_details', kwargs={'merch_id': self.pk})
