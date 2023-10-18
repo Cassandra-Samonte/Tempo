@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-</head>
-<body>
+{% extends 'tempo_app/base.html' %}
+
+<!-- Block for page content -->
+{% block content %}  
+
     <p>Player</p>
-    
+    <!-- https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
     <button id="togglePlay">Toggle Play</button>
+
     <script>
+        // https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player
         window.onSpotifyWebPlaybackSDKReady = () => {
             const token = '{{access_token}}';
             const player = new Spotify.Player({
@@ -23,10 +23,12 @@
                     console.log('The Web Playback SDK successfully connected to Spotify!');
                 }
             })
+            player.addListener('ready', ({ device_id }) => {
+                console.log('Connected with Device ID', device_id);
+            });
             document.getElementById('togglePlay').onclick = function() {
                 player.togglePlay();
             }
         };
     </script>
-</body>
-</html>
+{% endblock %}

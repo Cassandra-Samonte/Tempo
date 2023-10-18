@@ -122,22 +122,33 @@ def get_user_top_items(token):
     # url = "https://api.spotify.com/v1/me/"
     url = 'https://api.spotify.com/v1/me/top/artists'
     headers = get_auth_header(token)
-
     result = get(url, headers=headers)
     print(result)
     json_result = json.loads(result.content)
     # print(json_result)
     return json_result
 
-def play_song(token, track_uri):
-    data = {
-        "context_uri": track_uri
-    }
-    url = "https://api.spotify.com/v1/me/player/play"
+def pause_song(token):
+    url = "https://api.spotify.com/v1/me/player/pause"
     headers = get_auth_header(token)
-    result = put(url=url,headers=headers,data=data)
+    result = put(url=url,headers=headers)
+    return
 
-    print(result)
+
+def play_song(token, track_uri):
+    url = "https://api.spotify.com/v1/me/player/play"
+    headers = {
+        "Authorization":"Bearer "+token,
+        "Content-Type": "application/json"
+    }
+    data = {
+    "context_uri": track_uri,
+    "position_ms": 0
+    }
+    # The request body needs to be in json format
+    data = json.dumps(data)
+    result = put(url=url, headers=headers, data=data)
+    pause_song(token)
     return result
 
 

@@ -35,8 +35,8 @@ def player(request):
     # print(StoredInfo.access_token)
     # user_top_items = get_user_top_items(StoredInfo.access_token)
     # print(user_top_items)
-    track_uri= 'spotify:artist:5p9HO3XC5P3BLxJs5Mtrhm'
-    # result = play_song(StoredInfo.access_token, track_uri)
+    track_uri= "spotify:artist:5p9HO3XC5P3BLxJs5Mtrhm"
+    result = play_song(StoredInfo.access_token, track_uri)
     # print(result)
     return render(request, 'tempo_app/player.html',{
         'access_token':StoredInfo.access_token,
