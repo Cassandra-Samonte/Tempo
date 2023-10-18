@@ -30,7 +30,6 @@ urlpatterns = [
     path('artist_api/', views.artist_api, name='artist_api'),
     path('seed_artists/',views.seed_artists, name='seed_artists'),
     path('player/', views.player, name='player'),
-    path('merch/', views.merch, name='merch'),
     path('login/', views.login, name='login'),
     path('callback/', views.callback, name='callback'),
     path('merch/', views.merch, name='merch'),
