@@ -14,12 +14,12 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light customize-navbar">
-        <a class="navbar-brand">Tempo</a>
+        <a class="navbar-brand stretch-font">Tempo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto stretch-font uppercase">
             <li class="nav-item">
               <a class="nav-link" href="{% url 'landing' %}">Home</a>
             </li>
@@ -39,7 +39,7 @@
 
   <main class="container">
 
-    <h1>Merch</h1>
+    <h1 class="stretch-font uppercase">Merch</h1>
 
       {% if merchs %}
         <div class="row">

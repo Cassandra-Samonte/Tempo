@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Stretch Pro";
+  src: url('/static/fonts/StretchPro.otf') format('opentype');
+}
+
 body {
     background-color: white !important;
     min-height: 100vh;
@@ -9,3 +14,10 @@ body {
    height: 600px;
 }
 
+.stretch-font {
+  font-family: Stretch Pro;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
