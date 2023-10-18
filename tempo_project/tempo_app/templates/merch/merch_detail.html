@@ -18,6 +18,10 @@
         <p>Description: {{ merch.description|linebreaks }}</p>
         <img src="{{ merch.image }}" alt="{{ merch.item }}">
     </div>
+    <div class="card-action">
+        <a href="{% url 'merch_update' merch.id %}">Edit</a>
+        <a href="{% url 'merch_delete' merch.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}
