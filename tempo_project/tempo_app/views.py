@@ -3,7 +3,7 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Merch
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
@@ -24,6 +24,16 @@ class MerchCreate(CreateView):
     models = Merch
     fields = '__all__'
     success_url = '/merch/{merch_id}'
+
+class MerchUpdate(UpdateView):
+  model = Merch
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = '__all__'
+
+class MerchDelete(DeleteView):
+  model = Merch
+  success_url = '/merch'
+
 
 def home(request):
     return redirect('login')
