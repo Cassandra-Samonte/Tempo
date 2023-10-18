@@ -18,7 +18,7 @@ import os
 # Base64 imported because the concatenated string of clientId and client secret
 #   needs to be encoded with base 64, then it can be sent to receive a token
 import base64
-from requests import post, get
+from requests import post, get, put
 import json
 
 # Will only load if there is a .env file created
@@ -116,15 +116,44 @@ def get_songs_by_artist(token, artist_id):
     return json_result
 
 def get_user_top_items(token):
-    # url = "https://api.spotify.com/v1/me/"
     url = 'https://api.spotify.com/v1/me/top/artists'
     headers = get_auth_header(token)
-
     result = get(url, headers=headers)
-    print(result)
     json_result = json.loads(result.content)
-    print(json_result)
     return json_result
+
+def get_track(track_id):
+    url=f"https://api.spotify.com/v1/tracks/{track_id}"
+    token = get_token()
+    headers=get_auth_header(token)
+    result = get(url=url,headers=headers)
+    json_result = json.loads(result.content)
+    return json_result
+
+
+def pause_song(token):
+    url = "https://api.spotify.com/v1/me/player/pause"
+    headers = get_auth_header(token)
+    put(url=url,headers=headers)
+
+
+def play_song(token, track_uri):
+    url = "https://api.spotify.com/v1/me/player/play"
+    headers = {
+        "Authorization":"Bearer "+token,
+        "Content-Type": "application/json"
+    }
+    data = {
+    "uris": [track_uri],
+    "position_ms": 0
+    }
+    # The request body needs to be in json format
+    data = json.dumps(data)
+    result = put(url=url, headers=headers, data=data)
+    pause_song(token)
+    return result
+
+
 
 # # This token will be used in future headers when requests to the api are sent
 # #   requests such as trying to get artist info or album info

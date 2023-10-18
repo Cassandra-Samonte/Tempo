@@ -19,6 +19,8 @@ class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
+    player_made = False
+
 
 class MerchCreate(CreateView):
     model = Merch
@@ -38,11 +40,9 @@ class MerchDelete(DeleteView):
 def home(request):
     return redirect('login')
 
+
 def landing(request):
     return render(request, 'tempo_app/landing.html')
-
-# def merchDetails(request):
-#     return render(request, 'tempo_app/merchDetails.html')
 
 def player(request):
     print(StoredInfo.access_token)
@@ -52,6 +52,80 @@ def player(request):
 
 def merch(request):
     return render(request, 'tempo_app/merch.html')
+
+
+# Artist detail
+def artist(request, artist_name):
+    
+    # use main.py functions(funtions to use spotify api)
+    token = get_token()
+    result = search_for_artist(token, artist_name)
+
+    # Getting artist Id, necessary to get artist details
+    artist_id = result["id"]
+
+    # Getting artist top tracks using api
+    songs = get_songs_by_artist(token, artist_id)
+
+    # Putting all the song names into a list
+    song_list = []
+    for song in songs:
+        song_list.append({
+            'name':song['name'],
+            'id':song["id"]
+        })
+    # Getting artist picture
+    image_url = result["images"][0]["url"]
+
+    return render(request, 'tempo_app/artist.html',{
+        'artist': artist_name,
+        'songs': song_list,
+        'image_url': image_url,
+    })
+
+# def artist_api(request):
+#     return render(request, 'tempo_app/artist_api.html')
+
+# Seed Artists(localhost:PORT/seed_artists/)
+def seed_artists(request):
+    for artist in Artists:
+        c = Artist(name=artist['name'])
+        c.save()
+    return redirect('landing')
+
+# Artist Index
+def artist_api(request):
+    # Get list of all lists from database
+    artists = Artist.objects.all()
+
+    # Initialize an empty list to store data
+    artist_data = []
+
+    #  Get artist info from Spotify 
+    for artist in artists:
+        token = get_token()
+        result = search_for_artist(token, artist.name)
+
+        # Get artist name, image, and ID 
+        if result:
+            artist_name = result["name"]
+            image_url = result["images"][0]["url"]
+            spotify_id = result["id"]
+
+        # Append artist data to the list 
+        artist_data.append({
+            "name": artist_name,
+            "image_url": image_url,
+            "spotify_id": spotify_id
+        })
+    return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
+
+# Merch
+def merch(request):
+    merchs = Merch.objects.all()
+    return render(request, 'tempo_app/merch.html', {'merchs': merchs})
+
+
 
 # Login(basically just authorizing spotify)
 # https://developer.spotify.com/documentation/web-api/tutorials/code-flow
@@ -66,7 +140,7 @@ def login(request):
                              string.digits, k=N))
     # Scope are the permissions we want the user to authorize(can add more)
     # https://developer.spotify.com/documentation/web-api/concepts/scopes
-    scope = 'user-read-private user-read-email user-top-read user-modify-playback-state user-read-playback-state';
+    scope = 'user-read-private user-read-email user-top-read user-read-playback-state user-modify-playback-state user-read-currently-playing app-remote-control streaming user-read-playback-position';
     # convert an object to url query form and save it
     query_string = urllib.parse.urlencode({
         'response_type': 'code',
@@ -203,12 +277,7 @@ def artist_api(request):
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
 
-# Merch Index
+# Merch
 def merch(request):
     merchs = Merch.objects.all()
-    return render(request, 'merch/merch.html', {'merchs': merchs})
-
-# Merch Details
-def merch_detail(request, merch_id):
-    merch = Merch.objects.get( id=merch_id )
-    return render(request, 'merch/merch_detail.html', { 'merch': merch })
+    return render(request, 'merch.html', {'merchs': merchs})
