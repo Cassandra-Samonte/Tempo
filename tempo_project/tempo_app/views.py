@@ -3,6 +3,7 @@ from .seed_artist import Artists
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Merch
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
@@ -14,19 +15,32 @@ import random
 import urllib.request
 import urllib.parse
 
+
 class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
 
+class MerchCreate(CreateView):
+    model = Merch
+    fields = '__all__'
+    success_url = '/merch/{merch_id}'
+
+class MerchUpdate(UpdateView):
+  model = Merch
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = '__all__'
+
+class MerchDelete(DeleteView):
+  model = Merch
+  success_url = '/merch'
+
 
 def home(request):
     return redirect('login')
 
-
 def landing(request):
     return render(request, 'tempo_app/landing.html')
-
 
 def player(request, track_id):
     result = get_track(track_id)
@@ -41,12 +55,15 @@ def player(request, track_id):
         'track':track,
     })
 
-
 def merch(request):
-    return render(request, 'tempo_app/merch.html')
+    merchs = Merch.objects.all()
+    return render(request, 'merch/merch.html', {'merchs': merchs})
 
+def merch_detail(request, merch_id):
+    merch = Merch.objects.get( id=merch_id )
+    return render(request, 'merch/merch_detail.html', { 'merch': merch })
 
-# Artist detail
+# Artist Detail
 def artist(request, artist_name):
     
     # use main.py functions(funtions to use spotify api)
@@ -75,8 +92,6 @@ def artist(request, artist_name):
         'image_url': image_url,
     })
 
-# def artist_api(request):
-#     return render(request, 'tempo_app/artist_api.html')
 
 # Seed Artists(localhost:PORT/seed_artists/)
 def seed_artists(request):
@@ -111,12 +126,6 @@ def artist_api(request):
             "spotify_id": spotify_id
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
-
-# Merch
-def merch(request):
-    merchs = Merch.objects.all()
-    return render(request, 'tempo_app/merch.html', {'merchs': merchs})
-
 
 
 # Login(basically just authorizing spotify)

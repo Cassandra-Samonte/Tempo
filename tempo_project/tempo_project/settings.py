@@ -54,8 +54,7 @@ ROOT_URLCONF = 'tempo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-       'DIRS': [BASE_DIR / 'tempo_app' / 'templates'],
+        'DIRS': [BASE_DIR / 'tempo_app' / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

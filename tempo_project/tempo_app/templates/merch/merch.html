@@ -12,14 +12,18 @@
 <h1>Merch</h1>
 
 {% for merch in merchs %}
-  <div class="card">
+  <a href="{% url 'merch_details' merch.id %}">
+    <div class="card">
     <div class="card-content">
       <span class="card-title">{{ merch.item }}</span>
-      <p>Price: {{ merch.price }}</p>
-      <p>Description: {{ merch.description|linebreaks }}</p>
-      <!-- <img src="{{ merch.image }}" alt="{{ merch.item }}" width="200" height="200"> -->
+      <p>${{ merch.price }}</p>
+      <img src="{{ merch.image }}" alt="{{ merch.item }}">
     </div>
   </div>
+</a>
 {% endfor %}
+
+<a href="{% url 'merch_create' %}">Add Merch</a>
+
 
 {% endblock %}
