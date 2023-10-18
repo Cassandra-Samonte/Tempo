@@ -23,6 +23,7 @@ class StoredInfo:
 class MerchCreate(CreateView):
     models = Merch
     fields = '__all__'
+    success_url = '/merch/{merch_id}'
 
 def home(request):
     return redirect('login')
