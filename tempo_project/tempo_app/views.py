@@ -15,11 +15,11 @@ import random
 import urllib.request
 import urllib.parse
 
+
 class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
-
 
 class MerchCreate(CreateView):
     model = Merch
@@ -39,28 +39,21 @@ class MerchDelete(DeleteView):
 def home(request):
     return redirect('login')
 
-
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
-
 def player(request, track_id):
     result = get_track(track_id)
-    track_uri = result["uri"]
-    play_song(StoredInfo.access_token, track_uri)
     track={
         "img":result["album"]["images"][0]["url"],
         "artist_name":result["artists"][0]["name"],
         "track_name":result["name"],
+        "track_id": track_id,
     }
-    # print(result["album"]["images"][0]["url"])
-    # print(result["artists"][0]["name"])
-    # print(result["name"])
     return render(request, 'tempo_app/player.html',{
         'access_token':StoredInfo.access_token,
         'track':track,
     })
-
 
 def merch(request):
     merchs = Merch.objects.all()
@@ -70,7 +63,7 @@ def merch_detail(request, merch_id):
     merch = Merch.objects.get( id=merch_id )
     return render(request, 'merch/merch_detail.html', { 'merch': merch })
 
-# Artist detail
+# Artist Detail
 def artist(request, artist_name):
     
     # use main.py functions(funtions to use spotify api)
@@ -99,8 +92,6 @@ def artist(request, artist_name):
         'image_url': image_url,
     })
 
-# def artist_api(request):
-#     return render(request, 'tempo_app/artist_api.html')
 
 # Seed Artists(localhost:PORT/seed_artists/)
 def seed_artists(request):
@@ -135,8 +126,6 @@ def artist_api(request):
             "spotify_id": spotify_id
         })
     return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
-
-
 
 
 # Login(basically just authorizing spotify)
@@ -218,73 +207,3 @@ def callback(request):
 #     print(json_result)
 #     print()
 #     return redirect('player')
-
-# # Artist detail
-# def artist(request, artist_name):
-#     # Get artist object matching name
-#     # artist = Artist.objects.get(name='Drake')
-#     artist = Artist.objects.get(id=artist_id)
-
-    
-#     # use main.py functions(funtions to use spotify api)
-#     token = get_token()
-#     result = search_for_artist(token, artist.name)
-
-#     # Getting artist Id, necessary to get artist details
-#     artist_id = result["id"]
-
-#     # Getting artist top tracks using api
-#     songs = get_songs_by_artist(token, artist_id)
-
-#     # Putting all the song names into a list
-#     song_list = []
-#     for song in songs:
-#         song_list.append(song['name'])
-
-#     # Getting artist picture
-#     image_url = result["images"][0]["url"]
-#     print(image_url)
-
-#     return render(request, 'tempo_app/artist.html',{
-#         'artist': artist.name,
-#         'songs': song_list,
-#         'image_url': image_url,
-#     })
-
-# def artist_api(request):
-#     return render(request, 'tempo_app/artist_api.html')
-
-# Seed Artists(localhost:PORT/seed_artists/)
-def seed_artists(request):
-    for artist in Artists:
-        c = Artist(name=artist['name'])
-        c.save()
-    return redirect('landing')
-
-# Artist Index
-def artist_api(request):
-    # Get list of all lists from database
-    artists = Artist.objects.all()
-
-    # Initialize an empty list to store data
-    artist_data = []
-
-    #  Get artist info from Spotify 
-    for artist in artists:
-        token = get_token()
-        result = search_for_artist(token, artist.name)
-
-        # Get artist name, image, and ID 
-        if result:
-            artist_name = result["name"]
-            image_url = result["images"][0]["url"]
-            print(image_url)
-            spotify_id = result["id"]
-
-        # Append artist data to the list 
-        artist_data.append({
-            "name": artist_name,
-            "image_url": image_url,
-            "spotify_id": spotify_id
-        })
-    return render(request, 'tempo_app/artist_api.html', {'artist_data': artist_data})
