@@ -2,12 +2,13 @@
 
 <!-- Block for page content -->
 {% block content %}  
-
-    <p>Player</p>
+    <h1>{{track.artist_name}}</h1>
     <!-- https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player -->
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
-    <button id="togglePlay">Toggle Play</button>
+    <img src="{{track.img}}" alt="track picture">
+    <h1>{{track.track_name}}</h1>
+    <button class=".btn-lg" id="togglePlay">Toggle Play</button>
 
     <script>
         // https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player

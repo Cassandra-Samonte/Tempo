@@ -113,23 +113,28 @@ def get_songs_by_artist(token, artist_id):
 
     result = get(url, headers=headers)
     json_result = json.loads(result.content)["tracks"]
-    # print(json_result)
     return json_result
 
 def get_user_top_items(token):
-    # url = "https://api.spotify.com/v1/me/"
     url = 'https://api.spotify.com/v1/me/top/artists'
     headers = get_auth_header(token)
     result = get(url, headers=headers)
     json_result = json.loads(result.content)
-    # print(json_result)
     return json_result
+
+def get_track(track_id):
+    url=f"https://api.spotify.com/v1/tracks/{track_id}"
+    token = get_token()
+    headers=get_auth_header(token)
+    result = get(url=url,headers=headers)
+    json_result = json.loads(result.content)
+    return json_result
+
 
 def pause_song(token):
     url = "https://api.spotify.com/v1/me/player/pause"
     headers = get_auth_header(token)
-    result = put(url=url,headers=headers)
-    return
+    put(url=url,headers=headers)
 
 
 def play_song(token, track_uri):
