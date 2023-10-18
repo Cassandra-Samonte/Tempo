@@ -138,6 +138,7 @@ def pause_song(token):
 
 
 def play_song(token, track_uri):
+    print(track_uri)
     url = "https://api.spotify.com/v1/me/player/play"
     headers = {
         "Authorization":"Bearer "+token,

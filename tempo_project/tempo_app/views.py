@@ -18,7 +18,6 @@ class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
-    player_made = False
 
 
 def home(request):

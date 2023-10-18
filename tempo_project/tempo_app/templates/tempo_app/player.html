@@ -11,6 +11,49 @@
     <button class=".btn-lg" id="togglePlay">Toggle Play</button>
 
     <script>
+        async function getDevices(){
+            let url = 'https://api.spotify.com/v1/me/player/devices'
+            const options={
+                method: 'GET',
+                headers:{
+                    Authorization:'Bearer {{access_token}}'
+                }
+            }
+            // https://developer.spotify.com/documentation/web-api/howtos/web-app-profile
+            // Docs show how to send the fetch request, and how to use await twice
+            const devices = await fetch(url,options)
+            const dev = await devices.json()
+            console.log(dev.devices)
+            let tempo=""
+            for(let device of dev.devices){
+                if(device.name==="Tempo Player"){
+                    tempo=device.id
+                }
+            }
+            changeDevice(tempo)
+        }
+        async function changeDevice(deviceId){
+            let url = "https://api.spotify.com/v1/me/player"
+            let info= {
+                "device_ids":[
+                    deviceId
+                ]
+                ,
+                "play":true
+            }
+            info = JSON.stringify(info)
+            console.log(info)
+            const options = {
+                method: 'PUT',
+                headers: {
+                    Authorization:'Bearer {{access_token}}',
+                    'Content-Type':'application/json'
+                },
+                body: info
+            }
+            const res = await fetch(url,options)
+
+        }
         // https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player
         window.onSpotifyWebPlaybackSDKReady = () => {
             const token = '{{access_token}}';
@@ -26,6 +69,7 @@
             })
             player.addListener('ready', ({ device_id }) => {
                 console.log('Connected with Device ID', device_id);
+                getDevices()
             });
             document.getElementById('togglePlay').onclick = function() {
                 player.togglePlay();
