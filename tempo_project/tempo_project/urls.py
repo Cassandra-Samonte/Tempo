@@ -35,6 +35,8 @@ urlpatterns = [
     path('merch/', views.merch, name='merch'),
     path('merch/<int:merch_id>/', views.merch_detail, name='merch_details'),
     path('merch/create/', views.MerchCreate.as_view(), name='merch_create'),
+    path('merch/<int:pk>/update/', views.MerchUpdate.as_view(), name='merch_update'),
+    path('merch/<int:pk>/delete/', views.MerchDelete.as_view(), name='merch_delete'),
 
     # path('refresh_token/', views.refresh_token, name='refresh_token'),
 ]
