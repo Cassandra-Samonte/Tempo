@@ -19,7 +19,6 @@ class StoredInfo:
     redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
-    player_made = False
 
 
 class MerchCreate(CreateView):
@@ -44,11 +43,24 @@ def home(request):
 def landing(request):
     return render(request, 'tempo_app/landing.html')
 
-def player(request):
-    print(StoredInfo.access_token)
-    user_top_items = get_user_top_items(StoredInfo.access_token)
-    # print(user_top_items)
-    return render(request, 'tempo_app/player.html')
+
+def player(request, track_id):
+    result = get_track(track_id)
+    track_uri = result["uri"]
+    play_song(StoredInfo.access_token, track_uri)
+    track={
+        "img":result["album"]["images"][0]["url"],
+        "artist_name":result["artists"][0]["name"],
+        "track_name":result["name"],
+    }
+    # print(result["album"]["images"][0]["url"])
+    # print(result["artists"][0]["name"])
+    # print(result["name"])
+    return render(request, 'tempo_app/player.html',{
+        'access_token':StoredInfo.access_token,
+        'track':track,
+    })
+
 
 def merch(request):
     merchs = Merch.objects.all()

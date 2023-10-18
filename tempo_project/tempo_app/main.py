@@ -137,21 +137,26 @@ def pause_song(token):
     put(url=url,headers=headers)
 
 
-def play_song(token, track_uri):
+def play_song(token, track_id):
+    print(track_id)
+    track_id = f"spotify:track:{track_id}"
     url = "https://api.spotify.com/v1/me/player/play"
     headers = {
         "Authorization":"Bearer "+token,
         "Content-Type": "application/json"
     }
     data = {
-    "uris": [track_uri],
+    "uris": [
+        track_id
+        ],
     "position_ms": 0
     }
     # The request body needs to be in json format
     data = json.dumps(data)
+    print(data)
     result = put(url=url, headers=headers, data=data)
-    pause_song(token)
-    return result
+    # pause_song(token)
+    return result.json()
 
 
 
