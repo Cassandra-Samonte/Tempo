@@ -1,0 +1,11 @@
+body {
+    background-color: white !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+.card-content img {
+   height: 600px;
+}
+
