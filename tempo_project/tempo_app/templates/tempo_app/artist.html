@@ -17,7 +17,9 @@
         <h3>Top tracks</h3>
         <div class="card-content">
             {% for song in songs %}
-                <h5>{{song}}</h5>
+                <a href="{% url 'player' song.uri %}">
+                    <h5>{{song.name}}</h5>
+                </a>
             {% endfor %}
         </div>
     </div>

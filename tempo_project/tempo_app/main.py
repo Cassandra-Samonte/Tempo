@@ -114,8 +114,6 @@ def get_songs_by_artist(token, artist_id):
     result = get(url, headers=headers)
     json_result = json.loads(result.content)["tracks"]
     # print(json_result)
-    print(json_result[0])
-    print(json_result[0]['uri'])
     return json_result
 
 def get_user_top_items(token):
@@ -123,7 +121,6 @@ def get_user_top_items(token):
     url = 'https://api.spotify.com/v1/me/top/artists'
     headers = get_auth_header(token)
     result = get(url, headers=headers)
-    print(result)
     json_result = json.loads(result.content)
     # print(json_result)
     return json_result
@@ -142,7 +139,7 @@ def play_song(token, track_uri):
         "Content-Type": "application/json"
     }
     data = {
-    "context_uri": track_uri,
+    "uris": [track_uri],
     "position_ms": 0
     }
     # The request body needs to be in json format
