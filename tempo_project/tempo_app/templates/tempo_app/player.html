@@ -1,4 +1,11 @@
 {% extends 'tempo_app/base.html' %}
+{% load static %}
+
+<!-- Block for page specific css links -->
+{% block csslinks %}
+<link rel="stylesheet" href="{% static 'css/player.css' %}">
+{% endblock %}
+
 
 <!-- Block for page content -->
 {% block content %}  
@@ -7,13 +14,15 @@
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
     <img src="{{track.img}}" alt="track picture">
-    <h1>{{track.track_name}}</h1>
-    <button class=".btn-lg" id="togglePlay">Toggle Play</button>
-    <button class=".btn-lg" id="nextTrack">Next Track</button>
-
+    <h4>{{track.track_name}}</h4>
+    <div class="buttons">
+        <button class="btn" id="togglePlay">Toggle Play</button>
+        <!-- <button class=".btn-lg" id="nextTrack">Next Track</button> -->
+    </div>
 
 
     <script>
+        // https://developer.spotify.com/documentation/web-api/reference/get-a-users-available-devices
         async function getDevices(){
             let url = 'https://api.spotify.com/v1/me/player/devices'
             const options={
@@ -33,9 +42,9 @@
                     tempo=device.id
                 }
             }
-            // changeDevice(tempo)
             changeSong(tempo)
         }
+        // https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback
         async function changeSong(deviceId){
             let track ="{{track.track_id}}"
             let url = "https://api.spotify.com/v1/me/player/play?device_id="+deviceId
@@ -43,6 +52,7 @@
                 'uris':["spotify:track:"+track],
                 "position_ms":0
             }
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
             data = JSON.stringify(data)
             const options = {
                 method: "PUT",
