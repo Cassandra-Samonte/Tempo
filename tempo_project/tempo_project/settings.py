@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'tempo_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tempo5',
+        'NAME': 'tempo',
     }
 }
 
