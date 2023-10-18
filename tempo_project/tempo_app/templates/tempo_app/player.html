@@ -13,8 +13,6 @@
 
 
 
-
-
     <script>
         async function getDevices(){
             let url = 'https://api.spotify.com/v1/me/player/devices'
@@ -35,34 +33,8 @@
                     tempo=device.id
                 }
             }
-            changeDevice(tempo)
-        }
-        async function changeDevice(deviceId){
-            let url = "https://api.spotify.com/v1/me/player"
-            let info= {
-                "device_ids":[
-                    deviceId
-                ]
-                ,
-                "play":true
-            }
-            // let info= {
-            //     "device_ids":[
-            //         deviceId
-            //     ]
-            // }
-            info = JSON.stringify(info)
-            console.log(info)
-            const options = {
-                method: 'PUT',
-                headers: {
-                    Authorization:'Bearer {{access_token}}',
-                    'Content-Type':'application/json'
-                },
-                body: info
-            }
-            const res = await fetch(url,options)
-                .then(()=>changeSong(deviceId))
+            // changeDevice(tempo)
+            changeSong(tempo)
         }
         async function changeSong(deviceId){
             let track ="{{track.track_id}}"
