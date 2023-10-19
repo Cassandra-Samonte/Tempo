@@ -32,7 +32,7 @@
             {% for merch in merch_list %}
                 <div class="merchItem">
                     <h4>{{merch.item}}</h4>
-                    <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
+                    <img src="{% static merch.image %}" alt="{{merch.item}} picture" class="merchImg">
                 </div>
             {% endfor %}
         </div>

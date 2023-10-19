@@ -44,7 +44,7 @@
             <div class="col-md-6">
               <a href="{% url 'merch_details' merch.id %}">
                   <div class="card-content">
-                    <img src="{{ merch.image }}" alt="{{ merch.item }}">
+                    <img src="{% static merch.image %}" alt="{{ merch.item }}">
                     <p>{{ merch.item }}<br>${{ merch.price }}</p>
                   </div>
               </a>
