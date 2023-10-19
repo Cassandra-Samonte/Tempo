@@ -52,3 +52,28 @@ a:hover {
     color: gray;
     text-decoration: none;
 }
+.merchH{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+.merch{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.merchItem{
+    width: 40%;
+    display: inline;
+    margin-top: 20px;
+}
+.merchItem>h4{
+    font-size: 15px;
+    color: white;
+}
+.merchImg{
+    position: relative;
+    width: 100%;
+}

@@ -26,6 +26,18 @@
             </div>
         </div>
     </div>
+    {% if merch_list%}
+        <h2 class="merchH">Merch</h2>
+        <div class="merch">
+            {% for merch in merch_list %}
+                <div class="merchItem">
+                    <h4>{{merch.item}}</h4>
+                    <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
+                </div>
+            {% endfor %}
+        </div>
+        
+    {% endif %}
 </main>
 
 {% endblock %}
