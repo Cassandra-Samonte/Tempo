@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .seed_artist import Artists
+from .seed_artist import Artists, Merchs
 from .models import Artist
 from .main import *
 from .main import get_token, search_for_artist
@@ -85,7 +85,6 @@ def artist(request, artist_name):
         })
     # Getting artist picture
     image_url = result["images"][0]["url"]
-
     return render(request, 'tempo_app/artist.html',{
         'artist': artist_name,
         'songs': song_list,
@@ -98,8 +97,20 @@ def seed_artists(request):
     for artist in Artists:
         c = Artist(name=artist['name'])
         c.save()
+    seed_merch()
     return redirect('landing')
 
+def seed_merch():
+    for merch in Merchs:
+        c = Artist.objects.get(name=merch['name'])
+        c.merch_set.create(
+            item=merch['item'],
+            description=merch['description'],
+            price=merch['price'],
+            image=merch['image'],
+            artist=merch['name']
+            )
+    return
 
 def artist_api(request):
     artists = Artist.objects.all()
