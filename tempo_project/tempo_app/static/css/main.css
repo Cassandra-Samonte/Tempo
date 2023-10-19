@@ -32,7 +32,7 @@ h1 {
   font-family: "Stretch Pro";
   color: white;
   font-size: 80px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 /* Navbar */
@@ -89,4 +89,32 @@ footer {
   padding: 50px 0px 20px 0px;
   text-align: center;
   bottom: 0;  
+}
+
+@media only screen and (min-width:992px){
+  .customize-navbar{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: space-between;
+  }
+  .navbar-nav{
+    width: 370px;
+  }
+  .form-inline{
+    position: relative;
+    right: 0;
+    width: 400px;
+    position: relative;
+  }
+  #navForm{
+    border-radius: 40px;
+    position: relative;
+    width: 70%;
+    font-size: 15px;
+  }
+  .form-inline>.btn{
+    position: relative;
+    width: 26%;
+    padding-left: 6px;
+  }
 }

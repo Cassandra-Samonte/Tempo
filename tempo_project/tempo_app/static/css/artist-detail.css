@@ -26,8 +26,8 @@
 
 /* Artist Name */
 .overlay h1 {
-    font-size: 70px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 /* Songs */
@@ -39,7 +39,7 @@
 
 .overlay h5 {
     text-align: left;
-    font-size: 15px;
+    font-size: 12px;
     margin: 5px 0;
 }
 
@@ -56,19 +56,25 @@ a:hover {
     width: 80%;
     margin: 0 auto;
     color: white;
+    font-size: 30px;
 }
 .merch{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 90%;
     justify-content: space-between;
     margin: 0 auto;
 }
-.merchItem{
+.merchA{
     width: 40%;
     display: inline;
     margin-top: 20px;
 }
+/* .merchItem{
+    width: 40%;
+    display: inline;
+    margin-top: 20px;
+} */
 .merchItem>h4{
     font-size: 15px;
     color: white;
@@ -76,4 +82,58 @@ a:hover {
 .merchImg{
     position: relative;
     width: 100%;
+}
+
+@media only screen and (min-width:500px){
+    /* Artist Name */
+    .overlay h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    /* Songs */
+    .overlay h3 {
+        text-align: left;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .overlay h5 {
+        text-align: left;
+        font-size: 15px;
+        margin: 5px 0;
+    }
+
+    .merchH{
+        font-size: 35px;
+    }
+    .merchItem>h4{
+        font-size: 17px;
+    }
+}
+@media only screen and (min-width:768px){
+    /* Artist Name */
+    .overlay h1 {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+
+    /* Songs */
+    .overlay h3 {
+        text-align: left;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .overlay h5 {
+        text-align: left;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    .merchH{
+        font-size: 35px;
+    }
+    .merchItem>h4{
+        font-size: 19px;
+    }
 }
