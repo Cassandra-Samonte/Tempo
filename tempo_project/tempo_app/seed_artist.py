@@ -32,308 +32,308 @@ Artists = [
 ]
 Merchs = [
     {
-        'item':'Hoodie',
+        'item':'H o o d i e',
         'description':'Classic Hoodie',
         'price':158,
         'image':'merch/1.png',
         'name':'Drake'
         },
     {
-        'item':'Tee',
+        'item':'T e e',
         'description':'Classic Tee',
         'price':58,
         'image':'merch/2.png',
         'name':'Drake'
         },
     {
-        'item':'Sweatpants',
+        'item':'S w e a t p a n t s',
         'description':'Classic Relaxed Fit Sweatpants',
         'price':128,
         'image':'merch/3.png',
         'name':'Drake'
         },
     {
-        'item':'Sportcap',
+        'item':'S p o r t c a p',
         'description':'Classic Sportcap',
         'price':58,
         'image':'merch/4.png',
         'name':'Drake'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'Beyonce Renaissance World Tour Merch Disco Cowboy Hat T-Shirt',
         'price':32.90,
         'image':'merch/5.png',
         'name':'Beyoncé'
         },
     {
-        'item':'Sweatshirt',
+        'item':'S w e a t s h i r t',
         'description':'Beyonce Renaissance World Tour Outside Sweatshirt',
         'price':55,
         'image':'merch/6.png',
         'name':'Beyoncé'
         },
     {
-        'item':'Sweatshirt',
+        'item':'S w e a t s h i r t',
         'description':'Beyonce Renaissance World Tour Chroma Key Sweatshirt',
         'price':69,
         'image':'merch/7.png',
         'name':'Beyoncé'
         },
     {
-        'item':'Hoodie',
+        'item':'H o o d i e',
         'description':'Beyonce All Up In Your Mind Face Hoodie',
         'price':65,
         'image':'merch/8.png',
         'name':'Beyoncé'
         },
     {
-        'item':'Hoodie',
+        'item':'H o o d i e',
         'description':'1989 (Taylor''s Version) Blue Tie Dye Hoodie',
         'price':74.89,
         'image':'merch/9.png',
         'name':'Taylor Swift'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'Taylor Swift The Eras International Tour Mineral Wash Gray T-Shirt',
         'price':45,
         'image':'merch/10.png',
         'name':'Taylor Swift'
         },
     {
-        'item':'Hat',
+        'item':'H a t',
         'description':'1989 (Taylor''s Version) Taupe Hat',
         'price':39.89,
         'image':'merch/11.png',
         'name':'Taylor Swift'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'1989 (Taylor''s Version) Vinyl',
         'price':31.89,
         'image':'merch/12.png',
         'name':'Taylor Swift'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'Script Forest Green T-Shirt',
         'price':25,
         'image':'merch/13.png',
         'name':f"Her's"
         },
     {
-        'item':'Hat',
+        'item':'H a t',
         'description':'Script Dino Green Dad Hat',
         'price':25,
         'image':'merch/14.png',
         'name':f"Her's"
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'Songs of Hers 12" Vinyl',
         'price':25,
         'image':'merch/15.png',
         'name':f"Her's"
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'Invitation to Hers 12" Vinyl',
         'price':25,
         'image':'merch/16.png',
         'name':f"Her's"
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'HEADSPACE LONGSLEEVE SHIRT, BLACK',
         'price':35,
         'image':'merch/17.png',
         'name':'Bad Suns'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'LOGO RINGER TEE, BLACK',
         'price':25,
         'image':'merch/18.png',
         'name':'Bad Suns'
         },
     {
-        'item':'Windbreaker',
+        'item':'W i n d b r e a k e r',
         'description':'APOCALYPSE WHENEVER OVAL LOGO WINDBREAKER, BLACK',
         'price':75,
         'image':'merch/19.png',
         'name':'Bad Suns'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'MYSTIC TRUTH LP',
         'price':22,
         'image':'merch/20.png',
         'name':'Bad Suns'
         },
     {
-        'item':'Crewneck',
+        'item':'C r e w n e c k',
         'description':'CATCH A FIRE TIE DYE CREWNECK',
         'price':65,
         'image':'merch/21.png',
         'name':'Bob Marley & The Wailers'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'CATCH A FIRE TIE DYE T-SHIRT',
         'price':35,
         'image':'merch/22.png',
         'name':'Bob Marley & The Wailers'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'AFRICA UNITE LIMITED EDITION RED LP',
         'price':32.99,
         'image':'merch/23.png',
         'name':'Bob Marley & The Wailers'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'KAYA (TUFF GONG JAMAICA PRESSING)',
         'price':34.98,
         'image':'merch/24.png',
         'name':'Bob Marley & The Wailers'
         },
     {
-        'item':'Crewneck',
+        'item':'C r e w n e c k',
         'description':'Meet the Moonlight Ivory Crewneck Sweatshirt',
         'price':70,
         'image':'merch/25.png',
         'name':'Jack Johnson'
         },
     {
-        'item':'Tank Top',
+        'item':'T a n k  T o p',
         'description':'Moon Phases Cactus Tank Top',
         'price':45,
         'image':'merch/26.png',
         'name':'Jack Johnson'
         },
     {
-        'item':'Hat',
+        'item':'H a t',
         'description':'Meet The Moonlight Patch Hat',
         'price':30,
         'image':'merch/27.png',
         'name':'Jack Johnson'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'In Between Dreams - Vinyl',
         'price':35,
         'image':'merch/28.png',
         'name':'Jack Johnson'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'VINYL 12" EP "ANTARES"',
         'price':20,
         'image':'merch/29.png',
         'name':'Ours Samplus'
         },
     {
-        'item':'CD',
+        'item':'C D',
         'description':'Ours Samplus - One Day One Beat',
         'price':10,
         'image':'merch/30.png',
         'name':'Ours Samplus'
         },
     {
-        'item':'CD',
+        'item':'C D',
         'description':'PACK 6xCD',
         'price':30,
         'image':'merch/31.png',
         'name':'Ours Samplus'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'2x VINYL 12" Album "LAST FRONTIER"',
         'price':23,
         'image':'merch/32.png',
         'name':'Ours Samplus'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'YOU''VE GOT TO LEARN CONCERT T-SHIRT (BLACK)',
         'price':35,
         'image':'merch/33.png',
         'name':'Nina Simone'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'NINA SIMONE SILHOUETTE BLACK T-SHIRT',
         'price':35,
         'image':'merch/34.png',
         'name':'Nina Simone'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'YOU''VE GOT TO LEARN COLOR LP',
         'price':25.98,
         'image':'merch/35.png',
         'name':'Nina Simone'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'HIGH PRIESTESS OF SOUL LP',
         'price':24.98,
         'image':'merch/36.png',
         'name':'Nina Simone'
         },
     {
-        'item':'Hoodie',
+        'item':'H o o d i e',
         'description':'So Icy Boyz The New 1017 Crew Hoodie',
         'price':60,
         'image':'merch/37.png',
         'name':'Gucci Mane'
         },
     {
-        'item':'Sweatshirt',
+        'item':'S w e a t s h i r t',
         'description':'Brr Holiday Cone Sweatshirt',
         'price':50,
         'image':'merch/38.png',
         'name':'Gucci Mane'
         },
     {
-        'item':'Vinyl',
+        'item':'V i n y l',
         'description':'Breath Of Fresh Air Vinyl',
         'price':24.98,
         'image':'merch/39.png',
         'name':'Gucci Mane'
         },
     {
-        'item':'CD',
+        'item':'C D',
         'description':'Breath Of Breath of Fresh Air Vinyl | The New 1017 Official StoreFresh Air Signed Art Card CD',
         'price':18.98,
         'image':'merch/40.png',
         'name':'Gucci Mane'
         },
     {
-        'item':'T-Shirt',
+        'item':'T - S h i r t',
         'description':'400 BLOCK BUSTER T-SHIRT (CREAM)',
         'price':35,
         'image':'merch/41.png',
         'name':'YG'
         },
     {
-        'item':'Hoodie',
+        'item':'H o o d i e',
         'description':'4 BLOCK LOGO HOODIE (BROWN)',
         'price':90,
         'image':'merch/42.png',
         'name':'YG'
         },
     {
-        'item':'Sweatpants',
+        'item':'S w e a t p a n t s',
         'description':'4HUNNID HIT UP SWEATPANTS (TRAVERTINE)',
         'price':120,
         'image':'merch/43.png',
         'name':'YG'
         },
     {
-        'item':'Snapback',
+        'item':'S n a p b a c k',
         'description':'FH SNAPBACK (BROWN)',
         'price':45,
         'image':'merch/44.png',
