@@ -1,18 +1,16 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tempo Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/merch-index.css' %}">
     <link rel="stylesheet" href="{% static 'css/merch-detail.css' %}">
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light customize-navbar">
             <a class="navbar-brand stretch-font">Tempo</a>
@@ -40,29 +38,27 @@
 
         <!-- Left Column - Item Img Edit & Delete -->
           <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card-content">
-                        <img src="{{ merch.image }}" alt="{{ merch.item }}" class="img-fluid"><br>
-                    </div>
-                </div>
-          <!-- Right Column - Title, Price, Description -->
-                <div class="col-md-6">
-                  <div class="card-content">
-                      <h2 class="stretch-font">{{ merch.item }}</h2>
-                      <p>${{ merch.price }}</p>
-                      <div class="description">
-                        <p>Description: {{ merch.description|linebreaks }}</p>
-                      </div>
-                      <div class="button-container">
-                        <a class="btn" href="{% url 'merch_update' merch.id %}">Edit</a>
-                        <a class="btn" href="{% url 'merch_delete' merch.id %}">Delete</a>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="card-content">
+                          <img src="{{ merch.image }}" alt="{{ merch.item }}" class="img-fluid"><br>
                       </div>
                   </div>
-                </div>
-            </div>
+            <!-- Right Column - Title, Price, Description -->
+                  <div class="col-md-6">
+                      <div class="card-content">
+                            <h2 class="stretch-font">{{ merch.item }}</h2>
+                            <p>${{ merch.price }}</p>
+                            <div class="description">
+                              <p>Description: {{ merch.description|linebreaks }}</p>
+                            </div>
+                            <div class="button-container">
+                              <a class="btn" href="{% url 'merch_update' merch.id %}">Edit</a>
+                              <a class="btn" href="{% url 'merch_delete' merch.id %}">Delete</a>
+                            </div>
+                      </div>
+                  </div>
+              </div>
           </div>
 
 </body>
-
-</html>
