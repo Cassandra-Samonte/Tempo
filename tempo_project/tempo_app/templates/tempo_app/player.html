@@ -9,6 +9,7 @@
 
 <!-- Block for page content -->
 {% block content %}  
+<main class="container">
     <h1>{{track.artist_name}}</h1>
     <!-- https://developer.spotify.com/documentation/web-playback-sdk/howtos/web-app-player -->
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
@@ -19,6 +20,7 @@
         <button class="btn" id="togglePlay">Toggle Play</button>
         <!-- <button class=".btn-lg" id="nextTrack">Next Track</button> -->
     </div>
+</main>
 
 
     <script>
