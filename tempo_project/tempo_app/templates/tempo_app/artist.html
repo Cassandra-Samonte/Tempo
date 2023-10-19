@@ -26,14 +26,16 @@
             </div>
         </div>
     </div>
-    {% if merch_list%}
+    {% if merchs%}
         <h2 class="merchH">Merch</h2>
         <div class="merch">
-            {% for merch in merch_list %}
-                <div class="merchItem">
-                    <h4>{{merch.item}}</h4>
-                    <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
-                </div>
+            {% for merch in merchs %}
+                <a href="{% url 'merch_details' merch.id %}" class="merchA">
+                    <div class="merchItem">
+                        <h4>{{merch.item}}</h4>
+                        <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
+                    </div>
+                </a>
             {% endfor %}
         </div>
         
