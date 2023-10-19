@@ -3,6 +3,14 @@
     src: url('/static/fonts/StretchPro.otf') format('opentype');
   }
 
+.stretch-font {
+  font-family: Stretch Pro;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 body {
     background-image: url('/static/backgrounds/home.jpeg');
     min-height: 100vh;
@@ -17,11 +25,6 @@ body {
 main {
 flex: 1 0 auto;
 position: relative;
-}
-
-footer.page-footer {
-  padding-top: 0;
-  color: white;
 }
 
 /* Content */
@@ -51,4 +54,13 @@ h1 {
 .navbar-brand {
   color: white !important; 
   font-size: 30px !important;
+}
+
+/* Footer */
+footer {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px 20px 0px;
+  text-align: center;
 }

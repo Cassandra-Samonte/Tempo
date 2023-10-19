@@ -56,5 +56,6 @@ a {
 footer {
   display: flex;
   justify-content: center;
+  text-align: center;
   padding: 50px 0px 20px 0px;
 }
