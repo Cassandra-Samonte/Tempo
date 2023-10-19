@@ -40,7 +40,7 @@
   <main class="container">
 
     <h1 class="stretch-font uppercase">Merch</h1>
-
+    
       {% if merchs %}
         <div class="row">
           {% for merch in merchs %}
@@ -57,10 +57,16 @@
       {% else %}
         <h1>No Merch</h1>
       {% endif %}
-
-      <a class="btn" href="{% url 'merch_create' %}">Add Merch</a>
+      
+      <div class="button-container">
+        <a class="btn" href="{% url 'merch_create' %}">Add Merch</a>
+      </div>
   
   </main>
+
+  <footer>
+    <h3 class="stretch-font uppercase">All Rights Reserved, &copy; 2023 Tempo</h3>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>

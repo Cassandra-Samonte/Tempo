@@ -35,30 +35,36 @@
           </nav>
     </header>
 
-        <!-- Left Column - Item Img Edit & Delete -->
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-6">
-                      <div class="card-content">
-                          <img src="{{ merch.image }}" alt="{{ merch.item }}" class="img-fluid"><br>
-                      </div>
-                  </div>
-            <!-- Right Column - Title, Price, Description -->
-                  <div class="col-md-6">
-                      <div class="card-content">
-                            <h2 class="stretch-font uppercase">{{ merch.item }}</h2>
-                            <p>${{ merch.price }}</p>
-                            <div class="description">
-                              <p>{{ merch.description|linebreaks }}</p>
-                            </div>
-                            <div class="button-container">
-                              <a class="btn" href="{% url 'merch_update' merch.id %}">Edit</a>
-                              <a class="btn" href="{% url 'merch_delete' merch.id %}">Delete</a>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <main>
+      <!-- Left Column - Item Img Edit & Delete -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-content">
+                        <img src="{{ merch.image }}" alt="{{ merch.item }}" class="img-fluid"><br>
+                    </div>
+                </div>
+          <!-- Right Column - Title, Price, Description -->
+                <div class="col-md-6">
+                    <div class="card-content">
+                          <h2 class="stretch-font uppercase">{{ merch.item }}</h2>
+                          <p>${{ merch.price }}</p>
+                          <div class="description">
+                            <p>{{ merch.description|linebreaks }}</p>
+                          </div>
+                          <div class="button-container">
+                            <a class="btn" href="{% url 'merch_update' merch.id %}">Edit</a>
+                            <a class="btn" href="{% url 'merch_delete' merch.id %}">Delete</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+      <h3 class="stretch-font uppercase">All Rights Reserved, &copy; 2023 Tempo</h3>
+    </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
