@@ -32,13 +32,13 @@
 
 /* Songs */
 .overlay h3 {
-    text-align: center;
+    text-align: left;
     font-size: 30px;
     margin-bottom: 15px;
 }
 
 .overlay h5 {
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     margin: 5px 0;
 }
