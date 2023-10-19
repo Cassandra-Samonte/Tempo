@@ -24,11 +24,9 @@ class StoredInfo:
 class MerchCreate(CreateView):
     model = Merch
     fields = '__all__'
-    # success_url = '/merch/{merch_id}'
 
 class MerchUpdate(UpdateView):
   model = Merch
-  # Let's disallow the renaming of a cat by excluding the name field!
   fields = '__all__'
 
 class MerchDelete(DeleteView):
