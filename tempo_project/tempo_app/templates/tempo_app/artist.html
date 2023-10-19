@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/artist.css' %}">
 {% endblock %}
 {% block content %}
-<h1>{{ artist }}</h1>
+<h1 class="artistName">{{ artist }}</h1>
 <div class="topContent">
     <div>
         <h3>Top tracks</h3>
@@ -14,12 +14,20 @@
             </a>
         {% endfor %}
     </div>
-    <img src="{{ image_url }}" alt="artist image">
+    <img src="{{ image_url }}" alt="artist image" class="artistPic">
 </div>
 {% if merch_list%}
+
+<h2 class="merchH">Merch</h2>
     <div class="merch">
-        <h1>Merch</h1>
+        {% for merch in merch_list %}
+            <div class="merchItem">
+                <h4>{{merch.item}}</h4>
+                <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
+            </div>
+        {% endfor %}
     </div>
+        
 {% endif %}
 
 {% endblock %}
