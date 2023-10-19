@@ -60,20 +60,6 @@ Merchs = [
         'name':'Drake'
         },
     {
-        'item':'T-Shirt',
-        'description':'Beyonce Renaissance World Tour T-shirt',
-        'price':39,
-        'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/cf86731da362c974788afbf9c8b772ba.png',
-        'name':'Beyoncé'
-        },
-    {
-        'item':'T-Shirt',
-        'description':'Beyonce Renaissance World Tour Merch Disco Cowboy Hat T-Shirt',
-        'price':32.9,
-        'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/1f7a34fcfbc08d486b0f058ae14cd40f.jpeg',
-        'name':'Beyoncé'
-        },
-    {
         'item':'Sweatshirt',
         'description':'Beyonce Renaissance World Tour Chroma Key Sweatshirt',
         'price':69,
