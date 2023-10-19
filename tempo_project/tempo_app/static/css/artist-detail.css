@@ -1,3 +1,4 @@
+/* CSS File in use for artist detail */
 .hero {
     position: relative;
 }
@@ -9,7 +10,7 @@
     object-fit: cover;
 }
 
-/* Overlay for text content */
+/* Song Overlay */
 .overlay {
     position: absolute;
     top: 0;
@@ -53,10 +54,11 @@ a:hover {
     text-decoration: none;
 }
 .merchH{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     color: white;
-    font-size: 30px;
+    font-family: "Stretch Pro";
+    padding: 80px 0px 20px 0px;
 }
 .merch{
     display: flex;
@@ -70,11 +72,6 @@ a:hover {
     display: inline;
     margin-top: 20px;
 }
-/* .merchItem{
-    width: 40%;
-    display: inline;
-    margin-top: 20px;
-} */
 .merchItem>h4{
     font-size: 15px;
     color: white;
@@ -82,7 +79,32 @@ a:hover {
 .merchImg{
     position: relative;
     width: 100%;
+    padding-bottom: 50px;
 }
+
+/* Price Overlay */
+.merchItem {
+    position: relative;
+}
+
+.price {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    z-index: 2;
+}
+
+.merchItem:hover .price {
+    opacity: 1;
+}
+
+.merchItem:hover .merchImg {
+    opacity: 0.2; 
+}
+
 
 @media only screen and (min-width:500px){
     /* Artist Name */
