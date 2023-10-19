@@ -14,7 +14,7 @@ class Merch(models.Model):
     item = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
     price = models.IntegerField()
-    image = models.URLField(max_length=250)
+    image = models.CharField(max_length=250)
     name = models.CharField(max_length=100)
 
     # Create an artist_id FK
