@@ -25,13 +25,15 @@ h4{
     margin: 0 auto 10px;
 }
 
-.btn{
-    color: rgb(61, 0, 101);
-    background-color: rgb(255, 234, 209);
-    width: 120px;
-    padding: 2px 0;
-    font-size: 12px;
+.btn {
+    color: white;
 }
+
+.img {
+    width: 40px;
+    height: 40px;
+}
+
 .buttons{
     text-align: center;
 }
@@ -49,9 +51,9 @@ h4{
         font-size: 23px;
         max-width: 650px;
     }
-    .btn{
+    /* .btn{
         font-size: 17px;
         width: 150px;
         padding: 3px 0;
-    }
+    } */
 }

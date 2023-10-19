@@ -44,7 +44,11 @@
             <div class="col-md-6">
               <a href="{% url 'merch_details' merch.id %}">
                   <div class="card-content">
-                    <img src="{{ merch.image }}" alt="{{ merch.item }}">
+                    {% if "merch/" in merch.image%}
+                    <img src="{% static merch.image %}" alt="{{ merch.item }}">
+                    {% else %}
+                      <img src="{{merch.image}}" alt="{{merch.item}}">
+                    {% endif %}
                     <p>{{ merch.item }}<br>${{ merch.price }}</p>
                   </div>
               </a>

@@ -38,7 +38,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-content">
-                        <img src="{{ merch.image }}" alt="{{ merch.item }}" class="img-fluid"><br>
+                      {% if "merch/" in merch.image%}
+                        <img src="{% static merch.image %}" alt="{{ merch.item }}" class="img-fluid"><br>
+                      {% else %}
+                        <img src="{{merch.image}}" alt="{{merch.item}} picture" class="img-fluid"><br>
+                      {% endif %}
                     </div>
                 </div>
           <!-- Right Column - Title, Price, Description -->
