@@ -1,8 +1,8 @@
 Artists = [
     {'name':'Drake'},
-    {'name':'Beyonce'},
+    {'name':'Beyoncé'},
     {'name':'Taylor Swift'},
-    {'name':'Hers'},
+    {'name':f"Her's"},
     {'name':'Bad Suns'},
     {'name':'Sarah Kinsely'},
     {'name':'Bob Marley & The Wailers'},
@@ -64,28 +64,28 @@ Merchs = [
         'description':'Beyonce Renaissance World Tour T-shirt',
         'price':39,
         'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/cf86731da362c974788afbf9c8b772ba.png',
-        'name':'Beyonce'
+        'name':'Beyoncé'
         },
     {
         'item':'T-Shirt',
         'description':'Beyonce Renaissance World Tour Merch Disco Cowboy Hat T-Shirt',
         'price':32.9,
         'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/1f7a34fcfbc08d486b0f058ae14cd40f.jpeg',
-        'name':'Beyonce'
+        'name':'Beyoncé'
         },
     {
         'item':'Sweatshirt',
         'description':'Beyonce Renaissance World Tour Chroma Key Sweatshirt',
         'price':69,
         'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/131653ca6808aa3ab509968f384a3b93.jpg',
-        'name':'Beyonce'
+        'name':'Beyoncé'
         },
     {
         'item':'Hoodie',
         'description':'Beyonce All Up In Your Mind Face Hoodie',
         'price':65,
         'image':'https://www.beyoncesstore.com/wp-content/uploads/image/beyoncesstore/images/84a025b24fcc3ffb396f00cae4ba9636.png',
-        'name':'Beyonce'
+        'name':'Beyoncé'
         },
     {
         'item':'Hoodie',
@@ -120,28 +120,28 @@ Merchs = [
         'description':'Script Forest Green T-Shirt',
         'price':25,
         'image':'https://www.hellomerch.com/cdn/shop/products/Her_s21024.png?v=1659393210&width=1000',
-        'name':'Hers'
+        'name':f"Her's"
         },
     {
         'item':'Hat',
         'description':'Script Dino Green Dad Hat',
         'price':25,
         'image':'https://www.hellomerch.com/cdn/shop/products/Her_s71024.png?v=1614028624&width=1000',
-        'name':'Hers'
+        'name':f"Her's"
         },
     {
         'item':'Vinyl',
         'description':'Songs of Hers 12" Vinyl',
         'price':25,
         'image':'https://www.hellomerch.com/cdn/shop/products/Hers-SongsofHers-LP-MAIN.png?v=1614028514&width=1000',
-        'name':'Hers'
+        'name':f"Her's"
         },
     {
         'item':'Vinyl',
         'description':'Invitation to Hers 12" Vinyl',
         'price':25,
         'image':'https://www.hellomerch.com/cdn/shop/products/Hers-InvitationToHers-LP-MAIN.png?v=1614028606&width=1000',
-        'name':'Hers'
+        'name':f"Her's"
         },
     {
         'item':'T-Shirt',

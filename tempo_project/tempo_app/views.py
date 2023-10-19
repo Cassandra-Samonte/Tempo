@@ -65,7 +65,16 @@ def merch_detail(request, merch_id):
 
 # Artist Detail
 def artist(request, artist_name):
-    
+    c = Artist.objects.get(name=artist_name)
+    merchs = c.merch_set.all()
+    merch_list=[]
+    for merch in merchs:
+        merch_list.append({
+            "item":merch.item,
+            "description":merch.description,
+            "price":merch.price,
+            "image":merch.image
+        })
     # use main.py functions(funtions to use spotify api)
     token = get_token()
     result = search_for_artist(token, artist_name)
@@ -89,6 +98,7 @@ def artist(request, artist_name):
         'artist': artist_name,
         'songs': song_list,
         'image_url': image_url,
+        'merch_list':merch_list,
     })
 
 
