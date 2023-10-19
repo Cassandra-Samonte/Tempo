@@ -19,8 +19,6 @@ input.btn {
     text-transform: uppercase;
     font-weight: bold; 
     position: absolute;
-    /* left: 50%;
-    transform: translateX(-50%); */
 }
 
 input.btn:hover {
