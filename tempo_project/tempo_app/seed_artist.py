@@ -339,4 +339,326 @@ Merchs = [
         'image':'merch/44.png',
         'name':'YG'
         },
+    {
+        'item':'T - S h i r t',
+        'description':'Kendrick Lamar Mr. Morale and the Big Steppers Tour Merchandise',
+        'price':89,
+        'image':'merch/45.png',
+        'name':'Kendrick Lamar'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'Kendrick Lamar Mr. Morale & The Big Steppers Tour Hoodie',
+        'price': 120,
+        'image':'merch/46.png',
+        'name':'Kendrick Lamar'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Kendrick Lamar Mr. Morale and the Big Steppers Tour Merchandise',
+        'price': 89,
+        'image':'merch/47.png',
+        'name':'Kendrick Lamar'
+        },
+    {
+        'item':'H a t',
+        'description':'Mr. Morale & the Big Steppers trucker hat',
+        'price': 39,
+        'image':'merch/48.png',
+        'name':'Kendrick Lamar'
+        },
+    {
+        'item':'H a t',
+        'description':'Mac Dre - Much Love Logo Patch Black Snap Back Hat',
+        'price': 46.99,
+        'image':'merch/49.png',
+        'name':'Mac Dre'
+        },
+    {
+        'item':'H a t',
+        'description':'Mac Dre - White Patch Logo Black Mesh Snapback Hat (with Genie Pin)',
+        'price': 41.99,
+        'image':'merch/50.png',
+        'name':'Mac Dre'
+        },
+    {
+        'item':'L i g h t e r',
+        'description':'Mac Dre - Classic White Lighter',
+        'price': 6.99,
+        'image':'merch/51.png',
+        'name':'Mac Dre'
+        },
+    {
+        'item':'V i n y l',
+        'description':'Mac Dre ''Thizzelle Washington'' 2xLP (Yellow & Glow In The Dark)',
+        'price': 24.99,
+        'image':'merch/52.png',
+        'name':'Mac Dre'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'I Want Some! Official T-Shirt',
+        'price': 30,
+        'image':'merch/53.png',
+        'name':'Richie Quake'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'ROLL THE DICE T-SHIRT',
+        'price': 30,
+        'image':'merch/54.png',
+        'name':'Richie Quake'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'WAITING FOR YOUR TURN TO SPEAK T-SHIRT',
+        'price': 30,
+        'image':'merch/55.png',
+        'name':'Richie Quake'
+        },
+    {
+        'item':'H a t',
+        'description':'777 TRUCKER HAT',
+        'price': 30,
+        'image':'merch/56.png',
+        'name':'Richie Quake'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'CM Hoodie',
+        'price': 40,
+        'image':'merch/57.png',
+        'name':'chloe moriondo'
+        },
+    {
+        'item':'C r e w n e c k',
+        'description':'Puppy Charm Crewneck',
+        'price': 40,
+        'image':'merch/58.png',
+        'name':'chloe moriondo'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Fruity T-Shirt',
+        'price': 30,
+        'image':'merch/59.png',
+        'name':'chloe moriondo'
+        },
+    {
+        'item':'V i n y l',
+        'description':'SUCKERPUNCH Light Pink Vinyl (Web Exclusive)',
+        'price': 25,
+        'image':'merch/60.png',
+        'name':'chloe moriondo'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'DPR REGIME TOUR T-SHIRT BLACK',
+        'price': 60,
+        'image':'merch/61.png',
+        'name':'DPR IAN'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'DPR REGIME TOUR T-SHIRT WHITE',
+        'price': 60,
+        'image':'merch/62.png',
+        'name':'DPR IAN'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Anti T-shirt',
+        'price': 50,
+        'image':'merch/63.png',
+        'name':'Rihanna'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Good Girl Gone Bad T-shirt',
+        'price': 50,
+        'image':'merch/64.png',
+        'name':'Rihanna'
+        },
+    {
+        'item':'T - S h i  r t',
+        'description':'Talk That Talk T-shirt',
+        'price': 50,
+        'image':'merch/65.png',
+        'name':'Rihanna'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'Rated R Hoodie',
+        'price': 75,
+        'image':'merch/66.png',
+        'name':'Rihanna'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'SZA SOS Cover Hoodie (Deep Blue)',
+        'price': 80,
+        'image':'merch/67.png',
+        'name':'SZA'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Sza - White SOS North America Tour T-Shirt',
+        'price': 45,
+        'image':'merch/68.png',
+        'name':'SZA'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'SZA - All For Love Tour Hoodie (Black)',
+        'price': 60,
+        'image':'merch/69.png',
+        'name':'SZA'
+        },
+    {
+        'item':'V i n y l',
+        'description':'SZA - SOS 12” VINYL',
+        'price': 34.98,
+        'image':'merch/.png',
+        'name':'SZA'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'SUMMER TOUR 2023 TEE (WEBSTORE EXCLUSIVE)',
+        'price': 40,
+        'image':'merch/71.png',
+        'name':'Khalid'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'SUMMER TOUR 2023 TEE (WHITE)',
+        'price': 40,
+        'image':'merch/72.png',
+        'name':'Khalid'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'K HOODIE',
+        'price': 75,
+        'image':'merch/73.png',
+        'name':'Khalid'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'915 TO THE WORLD HOODIE',
+        'price': 75,
+        'image':'merch/74.png',
+        'name':'Khalid'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'CTV3 Trippers T-Shirt',
+        'price': 45,
+        'image':'merch/75.png',
+        'name':'Jaden'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'CTV3 Trippers Hoodie',
+        'price': 85,
+        'image':'merch/76.png',
+        'name':'Jaden'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'Classic SYRE T-Shirt',
+        'price': 45,
+        'image':'merch/77.png',
+        'name':'Jaden'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'Classic SYRE Hoodie',
+        'price': 85,
+        'image':'merch/78.png',
+        'name':'Jaden'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'TURNED TRUCK T-SHIRT',
+        'price': 40,
+        'image':'merch/79.png',
+        'name':'Post Malone'
+        },
+    {
+        'item':'C r e w n e c k',
+        'description':'BLUE TOUR CREWNECK',
+        'price': 75,
+        'image':'merch/80.png',
+        'name':'Post Malone'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'PM PHOTO T-SHIRT 2',
+        'price': 40,
+        'image':'merch/81.png',
+        'name':'Post Malone'
+        },
+    {
+        'item':'C r e w n e c k',
+        'description':'TAN KEYS CREWNECK',
+        'price': 75,
+        'image':'merch/82.png',
+        'name':'Post Malone'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'STREET LIGHT TEE',
+        'price': 43.99,
+        'image':'merch/83.png',
+        'name':'Juice WRLD'
+        },
+    {
+        'item':'J a c k e t',
+        'description':'HEADACHE JACKET',
+        'price': 149.99,
+        'image':'merch/84.png',
+        'name':'Juice WRLD'
+        },
+    {
+        'item':'S w e a t p a n t s',
+        'description':'999DBYE SWEATS',
+        'price': 134.99,
+        'image':'merch/85.png',
+        'name':'Juice WRLD'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'999DBYE HOODIE',
+        'price': 134.99,
+        'image':'merch/86.png',
+        'name':'Juice WRLD'
+        },
+    {
+        'item':'T - S h i r t',
+        'description':'ALL TIME HIGH TEE',
+        'price': 40,
+        'image':'merch/87.png',
+        'name':'Epik High'
+        },
+    {
+        'item':'H o o d i e',
+        'description':'ALL TIME HIGH HOODIE',
+        'price': 65,
+        'image':'merch/88.png',
+        'name':'Epik High'
+        },
+    {
+        'item':'H a t',
+        'description':'ALL TIME HIGH HAT',
+        'price':30,
+        'image':'merch/89.png',
+        'name':'Epik High'
+        },
+    {
+        'item':'T o t e',
+        'description':'ALL TIME HIGH TOTE',
+        'price':20,
+        'image':'merch/90.png',
+        'name':'Epik High'
+        }
 ]
