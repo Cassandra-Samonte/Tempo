@@ -4,7 +4,7 @@ Artists = [
     {'name':'Taylor Swift'},
     {'name':f"Her's"},
     {'name':'Bad Suns'},
-    {'name':'Sarah Kinsely'},
+    {'name':'Sarah Kinsley'},
     {'name':'Bob Marley & The Wailers'},
     {'name':'Jack Johnson'},
     {'name':'Guts'},
