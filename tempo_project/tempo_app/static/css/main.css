@@ -3,6 +3,14 @@
     src: url('/static/fonts/StretchPro.otf') format('opentype');
   }
 
+.stretch-font {
+  font-family: Stretch Pro;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 body {
     background-image: url('/static/backgrounds/home.jpeg');
     min-height: 100vh;
@@ -17,11 +25,6 @@ body {
 main {
 flex: 1 0 auto;
 position: relative;
-}
-
-footer.page-footer {
-  padding-top: 0;
-  color: white;
 }
 
 /* Content */
@@ -39,7 +42,7 @@ h1 {
 }
 
 .navbar-nav.ml-auto {
-  margin-left: auto; 
+  margin-right: auto; 
   color: white;
 }
 
@@ -51,4 +54,38 @@ h1 {
 .navbar-brand {
   color: white !important; 
   font-size: 30px !important;
+}
+
+.btn {
+  font-size: 12px;
+  border: 2px solid white; 
+  background-color: transparent; 
+  border-radius: 40px; 
+  padding: 10px; 
+  text-transform: uppercase;
+  font-weight: bold; 
+}
+
+.btn-outline-success {
+  color: white;
+}
+.btn-outline-success:hover {
+  color: gray;
+}
+
+.btn:hover {
+  background-color: white; 
+}
+
+input.form-control {
+  border-radius: 40px; 
+}
+
+/* Footer */
+footer {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px 20px 0px;
+  text-align: center;
 }
