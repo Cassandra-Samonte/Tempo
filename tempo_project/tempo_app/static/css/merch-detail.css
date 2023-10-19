@@ -27,8 +27,7 @@ body {
 }
 
 .button-container {
-    margin-top: auto;
-    padding: 25px 0px 25px 0px;
+    padding-top: 30px;
 }
 
 .btn {
@@ -44,6 +43,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%; 
+}
+
+.text {
+    transform: translateY(100px);
 }
 
 footer {
