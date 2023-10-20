@@ -39,6 +39,8 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  position: fixed;
+  bottom: 0;
 }
 
 .button-container {
@@ -57,7 +59,7 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 50px 0px 20px 0px;
+  padding-bottom: 90px;
 }
 
 .item-name {
