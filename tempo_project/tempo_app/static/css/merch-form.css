@@ -1,6 +1,40 @@
+.container {
+    width: 700px;
+    padding-top: 60px;
+}
+
 label {
     color: white;
+    text-transform: uppercase;
+}
 
+h1 {
+    letter-spacing: -22px;
+}
+
+/* Input Styles */
+input#id_item, 
+input#id_price, 
+input#id_image, 
+input#id_name, 
+select#id_artist,
+textarea#id_description {
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  width: 500px;
+}
+
+textarea#id_description {
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    width: 500px;
+    height: 50px;
 }
 
 input{
@@ -9,8 +43,10 @@ input{
 
 input.btn {
     color: white;
+    transform: translate(280px, 50px);
 }
 
+/* Button Styles */
 .btn {
     border: 2px solid white; 
     background-color: transparent; 
@@ -33,6 +69,4 @@ input.btn:hover {
     text-transform: uppercase;
     font-weight: bold; 
     position: absolute;
-    /* left: 50%;
-    transform: translateX(-50%); */
 }
