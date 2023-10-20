@@ -22,12 +22,17 @@ footer {
 }
 
 img {
-    width: 50px;
+    width: 60px;
     height: auto;
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#navbarNav {
+    margin-left: auto !important;
+    margin-right: 0 !important;
 }
 
 /* Search Input Styles */
