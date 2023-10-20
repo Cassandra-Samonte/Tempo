@@ -46,7 +46,7 @@ urlpatterns = [
     
     # Updated Routes that are more user friendly
     path('', views.login, name='login'),
-    path('landing/', views.landing, name='landing'),
+    path('home/', views.landing, name='landing'),
     path('artists/', views.artist_api, name='artist_api'),
     path('store/', views.merch, name='merch'),
 
