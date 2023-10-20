@@ -5,6 +5,7 @@ from .main import *
 from .main import get_token, search_for_artist
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Merch
+import requests
 
 # https://www.geeksforgeeks.org/python-generate-random-string-of-given-length/#
 # imported these for login, used to create a random 16 character string
