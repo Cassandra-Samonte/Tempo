@@ -72,7 +72,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tempo_project.wsgi.application'
+# WSGI_APPLICATION = 'tempo_project.wsgi.application'
+WSGI_APPLICATION = 'spotify_clone.wsgi.application'
 
 
 # Database
