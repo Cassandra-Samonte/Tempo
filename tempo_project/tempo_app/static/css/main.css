@@ -71,6 +71,7 @@ h1 {
 }
 .btn-outline-success:hover {
   color: gray;
+  border-color: none;
 }
 
 .btn:hover {
