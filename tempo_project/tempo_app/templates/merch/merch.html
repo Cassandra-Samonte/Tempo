@@ -50,7 +50,8 @@
                     {% else %}
                       <img src="{{merch.image}}" alt="{{merch.item}}">
                     {% endif %}
-                    <p>{{ merch.item }}<br>${{ merch.price }}</p>
+                    <p><span class="item-text">{{ merch.item }}</span><br>
+                        <span class="price-text">${{ merch.price }}</span></p>
                   </div>
               </a>
             </div>

@@ -68,7 +68,17 @@ a:hover {
   text-decoration: none;
 }
 
-p:hover {
+a:hover {
   text-decoration: none;
   opacity: 0.5;
+  color: black;
+}
+
+.item-text{
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.price-text {
+  font-size: 15px;
 }
