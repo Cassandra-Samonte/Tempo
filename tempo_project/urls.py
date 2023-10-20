@@ -23,21 +23,36 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # This is just so the app goes somewhere when it's first opened
     # We can change or modify in any way
-    path('', views.home, name='home'),
-    path('landing/', views.landing, name='landing'),
+    
+    # Old Routes that were not user friendly
+    # path('', views.home, name='home'),
+    # path('landing/', views.landing, name='landing'),
+    # path('artist_api/', views.artist_api, name='artist_api'),
+    # path('login/', views.login, name='login'),
+    # path('merch/', views.merch, name='merch'),
     # changed int to str to match Spotify data type 
+    
+    
     path('artist/<str:artist_name>/', views.artist, name='artist'),
-    path('artist_api/', views.artist_api, name='artist_api'),
     path('seed_artists/',views.seed_artists, name='seed_artists'),
     path('player/<str:track_id>/', views.player, name='player'),
-    path('login/', views.login, name='login'),
     path('callback/', views.callback, name='callback'),
-    path('merch/', views.merch, name='merch'),
     path('merch/<int:merch_id>/', views.merch_detail, name='merch_details'),
     path('merch/create/', views.MerchCreate.as_view(), name='merch_create'),
     path('merch/<int:pk>/update/', views.MerchUpdate.as_view(), name='merch_update'),
     path('merch/<int:pk>/delete/', views.MerchDelete.as_view(), name='merch_delete'),
     path('artist_search/', views.artist_search, name='artist_search'),
+    
+    
+    # Updated Routes that are more user friendly
+    path('', views.login, name='login'),
+    path('landing/', views.landing, name='landing'),
+    path('artists/', views.artist_api, name='artist_api'),
+    path('store/', views.merch, name='merch'),
+
+
+
+
 
     # path('refresh_token/', views.refresh_token, name='refresh_token'),
 ]
