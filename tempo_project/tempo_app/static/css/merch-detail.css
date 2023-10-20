@@ -49,7 +49,9 @@ footer {
     display: flex;
     justify-content: center;
     padding-top: 30px;
+    width: 100%;
     text-align: center;
+    bottom: 0;
 }
 
 h2 {
