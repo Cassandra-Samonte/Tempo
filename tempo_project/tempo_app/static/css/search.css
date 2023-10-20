@@ -78,8 +78,6 @@ input.search {
 .search-btn:hover {
     background-color: white; 
     border-radius: 40px; 
-    text-transform: uppercase;
     font-weight: bold; 
-    position: absolute;
     color: gray;
 }
