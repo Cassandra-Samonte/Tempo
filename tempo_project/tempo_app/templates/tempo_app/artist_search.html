@@ -1,9 +1,25 @@
 {% extends 'tempo_app/base.html' %}
+
+{% load static %}
+
+<!-- Block for page specific css links -->
+{% block csslinks %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>Artist Search</h1>
-<form method="get" action="{% url 'artist_search' %}">
-    <input type="text" name="q" placeholder="Search for an artist">
-    <button type="submit">Search</button>
-</form>
-<a href="{% url 'artist_api' %}" class="button-link">View All Artists</a>
+
+<!-- <h1>Artist Search</h1> -->
+
+<div class="search-container">
+    <form method="get" action="{% url 'artist_search' %}">
+        <input class="search" type="text" name="q" placeholder="Search for an artist">
+    </form>
+    <button class="search-btn" type="submit">Search</button>
+</div>
+
+<a href="{% url 'artist_api' %}" class="index-link">View All Artists</a>
+
+<img src="{% static 'images/tempologowhite.png' %}" alt="tempo-logo">
+
 {% endblock %}
