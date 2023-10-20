@@ -3,6 +3,13 @@
     padding-top: 60px;
 }
 
+.form-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 label {
     color: white;
     text-transform: uppercase;
@@ -37,13 +44,19 @@ textarea#id_description {
     height: 50px;
 }
 
+
 input{
     color: gray;
 }
 
 input.btn {
+    font-family: "Stretch Pro";
+    font-size: 15px;
     color: white;
-    transform: translate(280px, 50px);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Button Styles */
@@ -58,15 +71,37 @@ input.btn {
 }
 
 input.btn:hover {
-    color: black;
+    color: gray;
 }
 
 .btn:hover {
-    border: 2px solid white; 
-    background-color: white; 
+    color: gray;
     border-radius: 40px; 
     padding: 10px 20px; 
     text-transform: uppercase;
     font-weight: bold; 
     position: absolute;
+}
+
+/* Confirm Delete Styles */
+h2 {
+    font-family: "Stretch Pro";
+    color: white;
+    font-size: 40px;
+}
+
+h4 {
+    color: white;
+    font-size: 40px;
+}
+
+a.btn {
+    color: white;
+}
+
+#delete {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
