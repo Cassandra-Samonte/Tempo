@@ -56,7 +56,7 @@ h1 {
   font-size: 30px !important;
 }
 
-.btn {
+.navbtn {
   font-size: 12px;
   border: 2px solid white; 
   background-color: transparent; 
@@ -70,7 +70,8 @@ h1 {
   color: white;
 }
 .btn-outline-success:hover {
-  color: gray;
+  color: white;
+  border-color: none;
 }
 
 .btn:hover {

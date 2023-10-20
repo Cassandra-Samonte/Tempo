@@ -518,7 +518,7 @@ Merchs = [
         'item':'V i n y l',
         'description':'SZA - SOS 12” VINYL',
         'price': 34.98,
-        'image':'merch/.png',
+        'image':'merch/70.png',
         'name':'SZA'
         },
     {

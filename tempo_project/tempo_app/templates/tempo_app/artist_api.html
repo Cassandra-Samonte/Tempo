@@ -9,12 +9,12 @@
 <!-- Block for page content -->
 {% block content %}
 <main class="container">
-    <h1>Artists</h1>
+    <h1>Featured Artists</h1>
 
     <div class="container">
         <div class="row">
             {% for artist in artist_data %}
-            <div class="col-md-3 col-6">
+            <div class="col-lg-3 col-md-4 col-6">
                 <figure class="featured-artist">
                     <a href="{% url 'artist' artist.name %}">
                         <div class="artist-image">

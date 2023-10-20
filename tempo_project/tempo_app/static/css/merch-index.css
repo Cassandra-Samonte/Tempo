@@ -18,7 +18,7 @@ body {
 }
 
 .stretch-font {
-  font-family: Stretch Pro;
+  font-family: "Stretch Pro";
 }
 
 .uppercase {
@@ -29,16 +29,16 @@ h1 {
   padding: 25px 0px 25px 0px;
 }
 
-.btn {
+.merch-btn {
   border: 2px solid black; 
   background-color: transparent; 
   border-radius: 40px; 
-  padding: 10px 20px; 
+  padding: 10px; 
   text-transform: uppercase;
   font-weight: bold; 
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  letter-spacing: -3px;
+  font-size: 13px;
+  color: black !important;
 }
 
 .button-container {
@@ -57,7 +57,7 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 50px 0px 20px 0px;
+  padding-top: 60px;
 }
 
 .item-name {
@@ -68,7 +68,17 @@ a:hover {
   text-decoration: none;
 }
 
-p:hover {
+a:hover {
   text-decoration: none;
   opacity: 0.5;
+  color: black;
+}
+
+.item-text{
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.price-text {
+  font-size: 15px;
 }

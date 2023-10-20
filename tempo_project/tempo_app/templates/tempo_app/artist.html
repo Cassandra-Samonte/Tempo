@@ -26,24 +26,32 @@
             </div>
         </div>
     </div>
-    {% if merchs%}
-        <h2 class="merchH">Merch</h2>
-        <div class="merch">
-            {% for merch in merchs %}
-                <a href="{% url 'merch_details' merch.id %}" class="merchA">
-                    <div class="merchItem">
-                        <h4>{{merch.item}}</h4>
-                        {% if "merch/" in merch.image%}
-                            <img src="{% static merch.image %}" alt="{{merch.item}} picture" class="merchImg">
-                        {% else %}
-                            <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
-                        {% endif %}
+
+    <div class="container-fluid">
+        {% if merchs %}
+            <h2 class="merchH">Available for Purchase</h2>
+            <div class="row merch">
+                {% for merch in merchs %}
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <a href="{% url 'merch_details' merch.id %}" class="merchA">
+                            <div class="merchItem">
+                                <div class="price">
+                                    <h4>${{merch.price}}</h4>
+                                </div>
+                                {% if "merch/" in merch.image %}
+                                    <img src="{% static merch.image %}" alt="{{merch.item}} picture" class="merchImg">
+                                {% else %}
+                                    <img src="{{merch.image}}" alt="{{merch.item}} picture" class="merchImg">
+                                {% endif %}
+                            </div>
+                        </a>
                     </div>
-                </a>
-            {% endfor %}
-        </div>
-        
-    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    
+    
 </main>
 
 {% endblock %}

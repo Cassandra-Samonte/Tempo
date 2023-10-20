@@ -7,30 +7,34 @@
     <title>Tempo Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/merch-detail.css' %}">
+    <link rel="icon" href="{% static 'images/tempologo.png' %}">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light customize-navbar">
-            <a class="navbar-brand stretch-font">Tempo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto stretch-font uppercase">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'landing' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'artist_api' %}">Artists</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'merch' %}">Store</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light customize-navbar">
+        <a class="navbar-brand stretch-font">Tempo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto stretch-font uppercase">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'landing' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'artist_api' %}">Artists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'merch' %}">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link merch-btn" href="{% url 'merch_create' %}">A d d &nbsp; M e r c h</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
 
     <main>
       <!-- Left Column - Item Img Edit & Delete -->
@@ -38,16 +42,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-content">
-                      {% if "merch/" in merch.image%}
-                        <img src="{% static merch.image %}" alt="{{ merch.item }}" class="img-fluid"><br>
-                      {% else %}
-                        <img src="{{merch.image}}" alt="{{merch.item}} picture" class="img-fluid"><br>
-                      {% endif %}
+                        <a href="{% url 'artist' merch.artist.name %}">
+                        {% if "merch/" in merch.image%}
+                          <img src="{% static merch.image %}" alt="{{ merch.item }}" class="img-fluid"><br>
+                        {% else %}
+                          <img src="{{merch.image}}" alt="{{merch.item}} picture" class="img-fluid"><br>
+                        {% endif %}
+                      </a>
                     </div>
                 </div>
           <!-- Right Column - Title, Price, Description -->
                 <div class="col-md-6">
-                    <div class="card-content">
+                    <div class="card-content text">
                           <h2 class="stretch-font uppercase">{{ merch.item }}</h2>
                           <p>${{ merch.price }}</p>
                           <div class="description">
@@ -61,11 +67,11 @@
                 </div>
             </div>
         </div>
-    </main>
 
     <footer>
       <h3 class="stretch-font uppercase">All Rights Reserved, &copy; 2023 Tempo</h3>
     </footer>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
