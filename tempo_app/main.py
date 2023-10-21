@@ -25,8 +25,8 @@ import json
 load_dotenv()
 
 # Note: Research what os is
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+client_id = os.environ['CLIENT_ID']
+client_secret = os.environ['CLIENT_SECRET']
 
 def get_token():
 # Steps to get token

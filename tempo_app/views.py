@@ -18,7 +18,7 @@ import urllib.parse
 
 
 class StoredInfo:
-    redirect_uri='http://localhost:8000/callback'
+    redirect_uri='https://tempoproject-1ccff4d917c0.herokuapp.com/callback'
     access_token = ''
     refresh_token = ''
 
