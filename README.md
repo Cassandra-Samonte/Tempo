@@ -26,7 +26,7 @@ TEAM NAME: The Coding Cowboys
 You can view our wireframe and pitch deck [here](https://docs.google.com/presentation/d/1xWENw0HCjRm5mM1Jdd5yMoYJBEogwPoR/edit?usp=sharing&ouid=116832164001732092378&rtpof=true&sd=true).
 
 ## ERD
-![ERD LAYOUT](https://imgur.com/gallery/mLixBRh)
+![ERD LAYOUT](https://i.imgur.com/k68SlSs.png)
 
 
 ## Trello Board
