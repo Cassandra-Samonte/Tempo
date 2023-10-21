@@ -105,3 +105,54 @@ a.btn {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media (min-width: 280px) and (max-width: 900px) {
+    h1 {
+        font-size: 20px; 
+        letter-spacing: 2.5px;
+        padding: 20px;
+    }
+
+    input#id_item, 
+    input#id_price, 
+    input#id_image, 
+    input#id_name, 
+    select#id_artist,
+    textarea#id_description {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 5px;
+      font-size: 16px;
+      width: 200px;
+    }
+    
+    textarea#id_description {
+        border: 1px solid #ccc;
+        border-radius: 40px;
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+    }
+
+    input.btn {
+        color: white;
+        font-size: 10px;
+        position: absolute;
+        bottom: 10;
+        left: 30%;
+        transform: translateX(-50%);
+        padding: 10px
+    }
+
+    h3 {
+        color: white;
+        font-size: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+}
+}
