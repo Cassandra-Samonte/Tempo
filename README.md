@@ -39,7 +39,6 @@ Here is a table of routes and their corresponding functionalities:
 
 | Route                                      | Description                                            |
 |--------------------------------------------|--------------------------------------------------------|
-| `/`                                        | Home page                                              |
 | `/artist/<str:artist_name>/`               | View artist information                                |
 | `/seed_artists/`                           | Seed artist data                                       |
 | `/player/<str:track_id>/`                  | View player for a specific track                       |
