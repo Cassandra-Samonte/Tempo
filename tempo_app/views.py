@@ -18,8 +18,8 @@ import urllib.parse
 
 
 class StoredInfo:
-    # redirect_uri='https://tempoproject-1ccff4d917c0.herokuapp.com/callback'
-    redirect_uri='http://localhost:8000/callback'
+    redirect_uri='https://tempoproject-1ccff4d917c0.herokuapp.com/callback'
+    # redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
 
@@ -172,7 +172,7 @@ def artist_api(request):
 #     # redirect to the page that asks the user to authorize
 #     # once authorized(or cancelled), redirects to redirect uri(stored here, but also saved on spotify app dashboard)
 #     return redirect('https://accounts.spotify.com/authorize?'+query_string)
-codeVerifier = generateRandomString(128)
+
 def login(request):
     codeVerifier = generateRandomString(128)
     # codeVerifier = 'tTipOAamz8fcpEgKTRZk3L5Ps6aMqgQv1CV8mYMxvL0Zxajoh0v0ImqOwJpHGRuPyt5qZocKsi1IlIwTyXQJSjILvYnsxzwj3bWQHYzrvHENGcSDWbadYhN8vkiN4Upb'
