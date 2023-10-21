@@ -19,7 +19,6 @@ import urllib.parse
 
 class StoredInfo:
     redirect_uri='https://tempoproject-1ccff4d917c0.herokuapp.com/callback'
-    # redirect_uri='http://localhost:8000/callback'
     access_token = ''
     refresh_token = ''
 
@@ -173,53 +172,7 @@ def login(request):
     # once authorized(or cancelled), redirects to redirect uri(stored here, but also saved on spotify app dashboard)
     return redirect('https://accounts.spotify.com/authorize?'+query_string)
 
-# def login(request):
-#     codeVerifier = generateRandomString(128)
-#     # codeVerifier = 'tTipOAamz8fcpEgKTRZk3L5Ps6aMqgQv1CV8mYMxvL0Zxajoh0v0ImqOwJpHGRuPyt5qZocKsi1IlIwTyXQJSjILvYnsxzwj3bWQHYzrvHENGcSDWbadYhN8vkiN4Upb'
-#     # print('Code Verifier: '+ codeVerifier)
-#     codeChallenge = generateCodeChallenge(codeVerifier=codeVerifier)
-#     # print("Code Challenge: "+codeChallenge)
-#     state = generateRandomString(16)
-#     scope = 'user-read-private user-read-email user-top-read user-read-playback-state user-modify-playback-state user-read-currently-playing app-remote-control streaming user-read-playback-position';
-#     localStorage.setItem('code_verifier', codeVerifier)
-#     query_string = urllib.parse.urlencode({
-#         'response_type':'code',
-#         'client_id': client_id,
-#         'scope':scope,
-#         'redirect_uri':StoredInfo.redirect_uri,
-#         'state':state,
-#         'code_challenge_method':'S256',
-#         'code_challenge':codeChallenge
-#     })
-#     # print('Code Challenge: '+codeChallenge)
-#     # print('Code Verifier: '+codeVerifier)
-#     # print('Args: ' + query_string)
-#     return redirect('https://accounts.spotify.com/authorize?'+query_string)
-
-# def callback(request):
-#     code = request.GET['code']
-#     codeVerifier = localStorage.getItem('code_verifier')
-#     # print('Local Code Verifier: '+ codeVerifier)
-
-#     body = {
-#         'grant_type': 'authorization_code',
-#         'code':code,
-#         'redirect_uri':StoredInfo.redirect_uri,
-#         'client_id':client_id,
-#         'code_verifier':codeVerifier
-#     }
-#     headers={
-#         'Content-Type': 'application/x-www-form-urlencoded'
-#     }
-#     url = 'https://accounts.spotify.com/api/token'
-
-#     result = post(url=url, headers=headers, data=body)
-#     json_result = json.loads(result.content)
-#     StoredInfo.access_token = json_result['access_token']
-#     StoredInfo.refresh_token = json_result['refresh_token']
-
-#     return redirect('landing')
-# # https://developer.spotify.com/documentation/web-api/tutorials/code-flow
+# https://developer.spotify.com/documentation/web-api/tutorials/code-flow
 def callback(request):
     code = request.GET['code']
     state = request.GET['state']
