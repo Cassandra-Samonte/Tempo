@@ -32,7 +32,8 @@ class MerchUpdate(UpdateView):
 
 class MerchDelete(DeleteView):
   model = Merch
-  success_url = '/merch'
+  success_url = '/store'
+
 
 
 def home(request):
