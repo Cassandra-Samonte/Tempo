@@ -71,3 +71,5 @@ fi
 export SECRET_KEY='secretkey'
 export MODE='dev'
 export DB_PASSWORD='36dqjZoeWDfS'
+export CLIENT_ID='5e5fdc1046aa4169a0dfec5b2e760c8c'
+export CLIENT_SECRET='3d9852513ba64eafbabb8a580e0d9e57'
