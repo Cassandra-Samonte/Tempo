@@ -92,4 +92,9 @@ a:hover {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    #landingvideo {
+        min-width: 100%; 
+        min-height: auto; 
+    }
 }
