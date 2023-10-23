@@ -15,6 +15,22 @@ TEAM NAME: The Coding Cowboys
 - [Angelica Erazo](https://github.com/amerazo)
 
 
+## App Screenshots
+#### Home  
+![Home](tempo_app/static/images/Prog3Screenshots/Home.jpg)  
+#### Artist Index  
+![ArtistIndex](tempo_app/static/images/Prog3Screenshots/ArtistIndex.jpg)  
+#### Artist Detail  
+![ArtistDetail](tempo_app/static/images/Prog3Screenshots/ArtistDetail.jpg)  
+#### Merch Index  
+![MerchIndex](tempo_app/static/images/Prog3Screenshots/MerchIndex.jpg)  
+#### Merch Detail  
+![MerchDetail](tempo_app/static/images/Prog3Screenshots/MerchDetail.jpg)  
+#### Player  
+![Player](tempo_app/static/images/Prog3Screenshots/Player.jpg)  
+#### Search  
+![Search](tempo_app/static/images/Prog3Screenshots/Search.jpg)  
+
 ## Technologies Used
 
 - Django
