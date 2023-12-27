@@ -17,7 +17,7 @@ TEAM NAME: The Coding Cowboys
 ## Deployed App
 https://tempoproject-1ccff4d917c0.herokuapp.com/home/
 
-## App Screenshots
+## Deployed Project
 #### Home  
 ![Home](tempo_app/static/images/Prog3Screenshots/Home.jpg)  
 #### Artist Index  
